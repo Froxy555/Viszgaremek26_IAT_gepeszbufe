@@ -1,26 +1,36 @@
 import React from 'react'
 import './Sidebar.css'
-import { assets } from '../../assets/assets'
 import { NavLink } from 'react-router-dom'
+import {
+  IoSpeedometerOutline,
+  IoAddCircleOutline,
+  IoListOutline,
+  IoBriefcaseOutline,
+  IoPeopleOutline
+} from "react-icons/io5";
 
 const Sidebar = () => {
   return (
     <div className='sidebar'>
       <div className="sidebar-options">
+        <NavLink to='/dashboard' className="sidebar-option">
+          <IoSpeedometerOutline className="sidebar-icon" />
+          <p>Vezérlőpult</p>
+        </NavLink>
         <NavLink to='/add' className="sidebar-option">
-          <img src={assets.add_icon} alt="" />
+          <IoAddCircleOutline className="sidebar-icon" />
           <p>Termék hozzáadása</p>
         </NavLink>
         <NavLink to='/list' className="sidebar-option">
-          <img src={assets.order_icon} alt="" />
+          <IoListOutline className="sidebar-icon" />
           <p>Listázott termékek</p>
         </NavLink>
         <NavLink to='/orders' className="sidebar-option">
-          <img src={assets.order_icon} alt="" />
+          <IoBriefcaseOutline className="sidebar-icon" />
           <p>Rendelések</p>
         </NavLink>
         <NavLink to='/users' className="sidebar-option">
-          <img src={assets.user_icon} alt="" />
+          <IoPeopleOutline className="sidebar-icon" />
           <p>Felhasználók</p>
         </NavLink>
       </div>

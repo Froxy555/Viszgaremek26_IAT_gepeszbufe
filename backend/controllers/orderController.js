@@ -279,6 +279,70 @@ const getOrderById = async (req, res) => {
     }
 };
 
+// Statisztikák lekérése az admin dashboardhoz
+const getStats = async (req, res) => {
+    try {
+        const orders = await orderModel.find({});
+
+        // 1. Összes bevétel és rendelési szám
+        let totalRevenue = 0;
+        let totalOrders = orders.length;
+
+        // 2. Értékesítés napokra lebontva (utolsó 7 nap)
+        const salesPerDay = {};
+        const now = new Date();
+        for (let i = 6; i >= 0; i--) {
+            const date = new Date(now);
+            date.setDate(now.getDate() - i);
+            const dateString = date.toISOString().split('T')[0];
+            salesPerDay[dateString] = 0;
+        }
+
+        // 3. Top termékek
+        const productSales = {};
+
+        orders.forEach(order => {
+            if (order.payment) {
+                totalRevenue += order.amount;
+
+                const orderDate = new Date(order.date).toISOString().split('T')[0];
+                if (salesPerDay[orderDate] !== undefined) {
+                    salesPerDay[orderDate] += order.amount;
+                }
+
+                order.items.forEach(item => {
+                    if (productSales[item.name]) {
+                        productSales[item.name] += item.quantity;
+                    } else {
+                        productSales[item.name] = item.quantity;
+                    }
+                });
+            }
+        });
+
+        // Top 5 termék sorbarendezése
+        const topProducts = Object.keys(productSales)
+            .map(name => ({ name, count: productSales[name] }))
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 5);
+
+        res.json({
+            success: true,
+            totalRevenue,
+            totalOrders,
+            salesData: {
+                labels: Object.keys(salesPerDay),
+                data: Object.values(salesPerDay)
+            },
+            topProducts
+        });
+
+    } catch (error) {
+        console.error('Get stats error:', error);
+        res.status(500).json({ success: false, message: "Hiba a statisztikák lekérésekor", error: error.message });
+    }
+};
+
 export {
     placeOrder,
     listOrders,
@@ -286,5 +350,6 @@ export {
     updateStatus,
     verifyOrder,
     placeOrderCod,
-    getOrderById
+    getOrderById,
+    getStats
 };

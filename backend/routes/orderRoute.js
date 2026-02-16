@@ -7,7 +7,8 @@ import {
     userOrders,
     verifyOrder,
     placeOrderCod,
-    getOrderById
+    getOrderById,
+    getStats
 } from '../controllers/orderController.js';
 
 const orderRouter = express.Router();
@@ -15,6 +16,9 @@ const orderRouter = express.Router();
 // JSON feldolgozás middleware
 orderRouter.use(express.json());
 orderRouter.use(express.urlencoded({ extended: true }));
+
+// Statisztikák lekérése (admin funkció)
+orderRouter.get("/stats", getStats);
 
 // összes rendelés listázása (admin funkció)
 orderRouter.get("/list", listOrders);
