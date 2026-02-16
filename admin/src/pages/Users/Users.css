@@ -1,0 +1,32 @@
+.users-table-format {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1.5fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+}
+
+.users-table-format.title {
+    background-color: #f9f9f9;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.small-id {
+    font-size: 10px;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .users-table-format {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}

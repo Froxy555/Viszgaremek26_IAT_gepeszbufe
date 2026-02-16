@@ -1,0 +1,13 @@
+0000000000000000000000000000000000000000 64944f4eaebc35520c17551de43e665f9788f150 Kiss Tamas <tkiss693@gmail.com> 1770828588 +0100	commit (initial): dizajn frissites
+64944f4eaebc35520c17551de43e665f9788f150 365c9ca387ad4c382bd19fb0925b14a4be23f0ee Kiss Tamas <tkiss693@gmail.com> 1770829637 +0100	commit (merge): Merge remote history, keep local version
+365c9ca387ad4c382bd19fb0925b14a4be23f0ee 9bb25b77e749da83daa7d87be3b9a9beba5c751e Kiss Tamas <tkiss693@gmail.com> 1770938135 +0100	commit: Admin panel fejlesztések: dinamikus csillagos értékelés, felhasználók kezelése, rendelés státusz folyamat, automatikus frissítés és hangjelzés
+9bb25b77e749da83daa7d87be3b9a9beba5c751e 6265e13fdb0c748efc0aa94585ad6dbc570b1cf1 Kiss Tamas <tkiss693@gmail.com> 1770938302 +0100	commit (merge): Merge conflicts resolved: combined CORS origins and kept localhost URLs for development
+6265e13fdb0c748efc0aa94585ad6dbc570b1cf1 4a3a8a0b8e059aeaceefa6090186d959c4b8685e Kiss Tamas <tkiss693@gmail.com> 1770938362 +0100	commit: Fix: restore production URL for deployed frontend
+4a3a8a0b8e059aeaceefa6090186d959c4b8685e 570474c472d30976dd2c585fe113528efcd1aa3a Kiss Tamas <tkiss693@gmail.com> 1770938497 +0100	commit: Add environment variable support for API URL - auto-switch between localhost and production
+570474c472d30976dd2c585fe113528efcd1aa3a f57cf3c941d1a52e379c31ee5842d576db5b8a65 Kiss Tamas <tkiss693@gmail.com> 1770939218 +0100	commit: Fix: improve environment variable fallback logic for production builds
+f57cf3c941d1a52e379c31ee5842d576db5b8a65 195ce2b30bf16e5346aa407beca31caaa0f4531e Kiss Tamas <tkiss693@gmail.com> 1770939585 +0100	commit: Robust API URL detection: use runtime hostname check instead of build-time env vars
+195ce2b30bf16e5346aa407beca31caaa0f4531e cf89c87ab68677dbb5835234c88e34971a50badc Kiss Tamas <tkiss693@gmail.com> 1770939857 +0100	commit: Fix: removed hardcoded localhost URL from admin App.jsx to allow production backend connection
+cf89c87ab68677dbb5835234c88e34971a50badc 01331bca8709c4172e313e6d9f1805c239078007 Kiss Tamas <tkiss693@gmail.com> 1770940166 +0100	commit: Fix: stable environment detection using Vite PROD flag to prevent localhost fallback on Render
+01331bca8709c4172e313e6d9f1805c239078007 1f05c6a0fc071cf75d00aec0679cef1281641a9b Kiss Tamas <tkiss693@gmail.com> 1771257483 +0100	commit: Initial commit to new repository
+1f05c6a0fc071cf75d00aec0679cef1281641a9b d31ea90be11512ae8e2bb9e08264d3f176cc8312 Kiss Tamas <tkiss693@gmail.com> 1771257562 +0100	commit: Remove ignored files and sensitive data
+d31ea90be11512ae8e2bb9e08264d3f176cc8312 01331bca8709c4172e313e6d9f1805c239078007 Kiss Tamas <tkiss693@gmail.com> 1771257587 +0100	reset: moving to HEAD~2

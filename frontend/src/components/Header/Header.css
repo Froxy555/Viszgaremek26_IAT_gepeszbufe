@@ -1,0 +1,111 @@
+.header{
+  position: relative;
+  height: min(380px, 60vw);
+  margin: 24px auto 16px;
+  background: url('../../assets/cover.png') center/cover no-repeat;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(255, 255, 255, 0.85) 28%,
+      rgba(255, 255, 255, 0.55) 52%,
+      rgba(255, 224, 208, 0.2) 75%,
+      transparent 100%);
+}
+
+.header-contents{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  max-width: 460px;
+  padding-left: 72px;
+  padding-right: 40px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.header-contents h2{
+  font-weight: 700;
+  color: #262626;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.1;
+}
+
+.header-contents p{
+  color: rgba(38, 38, 38, 0.8);
+  font-size: max(1.1vw, 14px);
+  line-height: 1.5;
+}
+
+.header-contents button{
+  border: none;
+  color: #262626;
+  font-weight: 600;
+  padding: 1vw 2.8vw;
+  background: #ffffff;
+  font-size: max(1vw,13px);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.header-contents button:hover{
+  transform: translateY(-1px);
+  background-color: #fff4f2;
+  box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width:1050px) {
+  .header{
+    height: 42vw;
+  }
+  .header-contents{
+    max-width: 60%;
+    padding-left: 6vw;
+    padding-right: 4vw;
+  }
+}
+
+@media(max-width:750px){
+  .header{
+    height: 68vw;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header-contents{
+    max-width: 80%;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    gap: 12px;
+  }
+
+  .header-contents p{
+    font-size: 13px;
+  }
+
+  .header-contents button{
+    padding: 10px 22px;
+  }
+}
+
+.header-buy-button {
+  display: block;
+  z-index: 10;
+  position: relative;
+}

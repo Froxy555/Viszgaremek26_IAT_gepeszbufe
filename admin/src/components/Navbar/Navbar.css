@@ -1,0 +1,23 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    margin-bottom: 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.navbar .logo{
+    width: 140px;
+}
+
+.navbar .profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff4c24;
+}

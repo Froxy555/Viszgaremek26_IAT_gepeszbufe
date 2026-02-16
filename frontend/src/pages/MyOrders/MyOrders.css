@@ -1,0 +1,191 @@
+.my-orders {
+  margin: 30px 0 40px;
+}
+
+.my-orders h2 {
+  font-size: max(2.2vw, 22px);
+  margin-bottom: 20px;
+}
+
+.my-orders-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.my-orders-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.my-orders-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.my-orders-main img {
+  width: 46px;
+  height: 46px;
+}
+
+.my-orders-thumb-stack {
+  position: relative;
+  width: 60px;
+  height: 46px;
+}
+
+.my-orders-thumb-stack img {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.my-orders-thumb-stack img:nth-child(1) {
+  left: 0;
+  top: 5px;
+}
+
+.my-orders-thumb-stack img:nth-child(2) {
+  left: 16px;
+  top: 0;
+}
+
+.my-orders-thumb-stack img:nth-child(3) {
+  left: 32px;
+  top: 10px;
+}
+
+.my-orders-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.my-orders-title {
+  font-weight: 600;
+}
+
+.my-orders-meta {
+  font-size: 13px;
+  color: #777;
+}
+
+.my-orders-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.my-orders-amount {
+  font-weight: 600;
+}
+
+.my-orders-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.my-orders-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.my-orders-details-btn {
+  background: linear-gradient(135deg, #ff4c24, #ff9f5e);
+  color: #fff;
+}
+
+.my-orders-status .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+
+.my-orders-status-felvettük-rendelésed {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.my-orders-status-készítés-alatt {
+  background: #fff4d6;
+  color: #e89b1b;
+}
+
+.my-orders-status-elkészült {
+  background: #e6f7ea;
+  color: #22c55e;
+}
+
+.my-orders-status-átvéve {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.my-orders-status-processing,
+.my-orders-status-pending,
+.my-orders-status-default {
+  background: #fff4f2;
+  color: #ff4c24;
+}
+
+
+
+.my-orders-status-delivered {
+  background: #e6f7ea;
+  color: #22c55e;
+}
+
+.my-orders button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: #fff4f2;
+  color: #ff4c24;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.my-orders-empty {
+  padding: 20px 18px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.my-orders-empty button {
+  align-self: flex-start;
+}
+
+@media (max-width: 750px) {
+  .my-orders-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .my-orders-side {
+    align-items: flex-start;
+  }
+}
