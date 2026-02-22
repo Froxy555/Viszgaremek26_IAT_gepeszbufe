@@ -11,7 +11,7 @@ import { useGoogleLogin } from '@react-oauth/google'
 const LoginPopup = ({ setShowLogin }) => {
     const { setToken, url, loadCartData, setProfileName, setProfileAvatar } = useContext(StoreContext)
 
-    // Lehetséges állapotok: "Bejelentkezés", "Regisztráció", "Email megerősítés"
+    // Lehetséges állapotok: "Bejelentkezés", "Regisztráció", "Email megerősítés", "Elfelejtett jelszó", "Jelszó visszaállítása"
     const [currState, setCurrState] = useState("Regisztráció");
     const [showPassword, setShowPassword] = useState(false);
 
@@ -20,6 +20,7 @@ const LoginPopup = ({ setShowLogin }) => {
         name: "",
         email: "",
         password: "",
+        newPassword: "",
         otp: ""
     })
 
@@ -58,6 +59,31 @@ const LoginPopup = ({ setShowLogin }) => {
                 // Sima bejelentkezés
                 const response = await axios.post(url + "/api/user/login", data);
                 handleAuthResponse(response);
+            }
+            else if (currState === "Elfelejtett jelszó") {
+                // Visszaállító OTP kérése
+                const response = await axios.post(url + "/api/user/forgot-password", { email: data.email });
+                if (response.data.success) {
+                    toast.success(response.data.message);
+                    setCurrState("Jelszó visszaállítása");
+                } else {
+                    toast.error(response.data.message);
+                }
+            }
+            else if (currState === "Jelszó visszaállítása") {
+                // Új jelszó beállítása az OTP alapján
+                const response = await axios.post(url + "/api/user/reset-password", {
+                    email: data.email,
+                    otp: data.otp,
+                    newPassword: data.newPassword
+                });
+                if (response.data.success) {
+                    toast.success(response.data.message);
+                    setCurrState("Bejelentkezés");
+                    setData({ ...data, otp: "", newPassword: "", password: "" });
+                } else {
+                    toast.error(response.data.message);
+                }
             }
         } catch (error) {
             console.error("Hálózati hiba vagy backend probléma:", error);
@@ -116,32 +142,38 @@ const LoginPopup = ({ setShowLogin }) => {
                 </div>
 
                 <div className="login-popup-inputs">
-                    {/* Alap mezők Regisztrációnál és Bejelentkezésnél */}
-                    {currState !== "Email megerősítés" && (
-                        <>
-                            {currState === "Regisztráció" && (
-                                <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Teljes neved' required />
-                            )}
-                            <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email címed' required />
-
-                            <div className="password-input-container">
-                                <input
-                                    name='password'
-                                    onChange={onChangeHandler}
-                                    value={data.password}
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder='Jelszó'
-                                    required
-                                />
-                                <button type="button" className="password-toggle-btn" onClick={togglePasswordVisibility}>
-                                    {showPassword ? <EyeOff size={20} color="#777" /> : <Eye size={20} color="#777" />}
-                                </button>
-                            </div>
-                        </>
+                    {currState === "Regisztráció" && (
+                        <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Teljes neved' required />
                     )}
 
-                    {/* OTP Mező */}
-                    {currState === "Email megerősítés" && (
+                    {(currState === "Regisztráció" || currState === "Bejelentkezés" || currState === "Elfelejtett jelszó") && (
+                        <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email címed' required />
+                    )}
+
+                    {(currState === "Regisztráció" || currState === "Bejelentkezés") && (
+                        <div className="password-input-container">
+                            <input
+                                name='password'
+                                onChange={onChangeHandler}
+                                value={data.password}
+                                type={showPassword ? "text" : "password"}
+                                placeholder='Jelszó'
+                                autoComplete={currState === "Regisztráció" ? "new-password" : "current-password"}
+                                required
+                            />
+                            <button type="button" className="password-toggle-btn" onClick={togglePasswordVisibility}>
+                                {showPassword ? <EyeOff size={20} color="#777" /> : <Eye size={20} color="#777" />}
+                            </button>
+                        </div>
+                    )}
+
+                    {currState === "Bejelentkezés" && (
+                        <p className="forgot-password-link" onClick={() => setCurrState("Elfelejtett jelszó")}>
+                            Elfelejtetted a jelszavad?
+                        </p>
+                    )}
+
+                    {(currState === "Email megerősítés" || currState === "Jelszó visszaállítása") && (
                         <>
                             <p className="otp-info-text">
                                 Elküldtünk egy 4 jegyű kódot a(z) <b>{data.email}</b> címre. Nézd meg a SPAM mappát is!
@@ -157,11 +189,30 @@ const LoginPopup = ({ setShowLogin }) => {
                             />
                         </>
                     )}
+
+                    {currState === "Jelszó visszaállítása" && (
+                        <div className="password-input-container">
+                            <input
+                                name='newPassword'
+                                onChange={onChangeHandler}
+                                value={data.newPassword}
+                                type={showPassword ? "text" : "password"}
+                                placeholder='Új jelszó'
+                                autoComplete="new-password"
+                                required
+                            />
+                            <button type="button" className="password-toggle-btn" onClick={togglePasswordVisibility}>
+                                {showPassword ? <EyeOff size={20} color="#777" /> : <Eye size={20} color="#777" />}
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 <button type="submit" className="login-submit-button">
                     {currState === "Bejelentkezés" ? "Bejelentkezés" :
-                        currState === "Email megerősítés" ? "Megerősítés és Regisztráció" : "Fiók létrehozása"}
+                        currState === "Regisztráció" ? "Fiók létrehozása" :
+                            currState === "Email megerősítés" ? "Megerősítés és Regisztráció" :
+                                currState === "Elfelejtett jelszó" ? "Kód küldése" : "Jelszó visszaállítása"}
                 </button>
 
                 {/* Feltételek elfogadása (CSAK REGISZTRÁCIÓKOR) */}
@@ -173,7 +224,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 )}
 
                 {/* Váltás állapotok között (bejelentkezés / reg) */}
-                {currState !== "Email megerősítés" && (
+                {(currState === "Regisztráció" || currState === "Bejelentkezés") && (
                     <>
                         <div className="login-popup-separator">
                             <span>vagy</span>
@@ -188,15 +239,20 @@ const LoginPopup = ({ setShowLogin }) => {
                             </svg>
                             Bejelentkezés Google fiókkal
                         </button>
-
-                        <div className="login-popup-footer">
-                            {currState === "Bejelentkezés"
-                                ? <p>Nincs még fiókod? <span onClick={() => setCurrState('Regisztráció')}>Regisztrálj!</span></p>
-                                : <p>Van már fiókod? <span onClick={() => setCurrState('Bejelentkezés')}>Jelentkezz be!</span></p>
-                            }
-                        </div>
                     </>
                 )}
+
+                <div className="login-popup-footer">
+                    {currState === "Bejelentkezés" && (
+                        <p>Nincs még fiókod? <span onClick={() => setCurrState('Regisztráció')}>Regisztrálj!</span></p>
+                    )}
+                    {currState === "Regisztráció" && (
+                        <p>Van már fiókod? <span onClick={() => setCurrState('Bejelentkezés')}>Jelentkezz be!</span></p>
+                    )}
+                    {(currState === "Elfelejtett jelszó" || currState === "Jelszó visszaállítása" || currState === "Email megerősítés") && (
+                        <p>Vissza a <span onClick={() => { setCurrState('Bejelentkezés'); setData({ ...data, otp: "", newPassword: "" }) }}>Bejelentkezéshez</span></p>
+                    )}
+                </div>
             </form>
         </div>
     )

@@ -83,9 +83,9 @@ const App = () => {
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : null}
       <div className='app'>
         <Navbar setShowLogin={setShowLogin} />
-        {!(location.pathname === '/cart' || location.pathname === '/order' || location.pathname.startsWith('/order-success')) && <CartSidebar />}
-        <MobileCartButton />
-        {location.pathname === '/' && <Chatbot />}
+        {!showLogin && !(location.pathname === '/cart' || location.pathname === '/order' || location.pathname.startsWith('/order-success')) && <CartSidebar />}
+        {!showLogin && <MobileCartButton />}
+        {!showLogin && location.pathname === '/' && <Chatbot />}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart />} />

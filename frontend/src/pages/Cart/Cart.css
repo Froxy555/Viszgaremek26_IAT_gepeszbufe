@@ -261,8 +261,10 @@ html.dark-mode .exclusion-btn.added {
 @media (max-width: 900px) {
   .cart-layout {
     flex-direction: column;
+    align-items: stretch;
   }
 
+  .cart-left,
   .cart-right {
     width: 100%;
   }

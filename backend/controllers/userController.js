@@ -247,6 +247,91 @@ const sendOtp = async (req, res) => {
     }
 }
 
+// jelszó visszaállító otp kód elküldése
+const sendPasswordResetOtp = async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await userModel.findOne({ email });
+        if (!user) {
+            return res.json({ success: false, message: "Nincs regisztrálva ilyen email cím" });
+        }
+        if (!validator.isEmail(email)) {
+            return res.json({ success: false, message: "Érvénytelen email cím" });
+        }
+
+        const otpCode = Math.floor(1000 + Math.random() * 9000).toString();
+
+        await otpModel.deleteMany({ email }); // Korábbi kódok törlése
+        const newOtp = new otpModel({ email, otp: otpCode });
+        await newOtp.save();
+
+        // Nodemailer
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS
+                }
+            });
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: email,
+                subject: 'GépészBüfé - Jelszó Visszaállítás',
+                text: `Kérlek használd az alábbi 4 jegyű kódot a jelszavad visszaállításához:\n\n${otpCode}\n\nA kód 5 percen belül lejár.`
+            };
+            await transporter.sendMail(mailOptions);
+        } else {
+            console.log("------------------------");
+            console.log("NINCS BEÁLLÍTVA AZ EMAIL SYSTEM (.env fájlban EMAIL_USER és EMAIL_PASS kellenek)");
+            console.log(`JELSZÓ VISSZAÁLLÍTÓ KÓD ehhez az emailhez (${email}):`, otpCode);
+            console.log("------------------------");
+        }
+
+        res.json({ success: true, message: "Visszaállító kód elküldve az emailedre!" });
+    } catch (err) {
+        console.log(err);
+        res.json({ success: false, message: "Hiba történt az email küldésekor" });
+    }
+}
+
+// jelszó visszaállítása
+const resetPassword = async (req, res) => {
+    const { email, otp, newPassword } = req.body;
+    try {
+        if (!email || !otp || !newPassword) {
+            return res.json({ success: false, message: "Kérlek tölts ki minden mezőt" });
+        }
+
+        const validOtp = await otpModel.findOne({ email, otp });
+        if (!validOtp) {
+            return res.json({ success: false, message: "Hibás vagy lejárt kód" });
+        }
+
+        if (newPassword.length < 8) {
+            return res.json({ success: false, message: "Az új jelszónak legalább 8 karakter hosszúnak kell lennie" });
+        }
+
+        const user = await userModel.findOne({ email });
+        if (!user) {
+            return res.json({ success: false, message: "Felhasználó nem található" });
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+        user.password = hashedPassword;
+        await user.save();
+
+        await otpModel.deleteMany({ email });
+
+        res.json({ success: true, message: "Jelszó sikeresen módosítva!" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Hiba történt a jelszó visszaállítása során" });
+    }
+}
+
 // google fiókos bejelentkezés
 const googleLogin = async (req, res) => {
     const { token: accessToken } = req.body;
@@ -313,4 +398,4 @@ const deleteUser = async (req, res) => {
     }
 }
 
-export { loginUser, registerUser, getProfile, updateProfile, listUsers, sendOtp, googleLogin, deleteUser }
+export { loginUser, registerUser, getProfile, updateProfile, listUsers, sendOtp, googleLogin, deleteUser, sendPasswordResetOtp, resetPassword }
