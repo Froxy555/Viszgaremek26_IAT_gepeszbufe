@@ -11,7 +11,7 @@ import { createPortal } from 'react-dom';
 const MyOrders = () => {
 
   const [data, setData] = useState([]);
-  const { url, token, currency } = useContext(StoreContext);
+  const { url, token, currency, food_list } = useContext(StoreContext);
   const navigate = useNavigate();
 
   // Állapotok a lemondás módalhoz
@@ -119,13 +119,17 @@ const MyOrders = () => {
               <div key={index} className='my-orders-card'>
                 <div className="my-orders-main">
                   <div className="my-orders-thumb-stack">
-                    {previewItems.map((item, idx) => (
-                      <img
-                        key={idx}
-                        src={item.image ? `${url}/images/${item.image}` : assets.parcel_icon}
-                        alt={item.name}
-                      />
-                    ))}
+                    {previewItems.map((item, idx) => {
+                      const currentFood = food_list.find(f => f._id === item._id);
+                      const displayImage = currentFood && currentFood.image ? currentFood.image : item.image;
+                      return (
+                        <img
+                          key={idx}
+                          src={displayImage ? `${url}/images/${displayImage}` : assets.parcel_icon}
+                          alt={item.name}
+                        />
+                      );
+                    })}
                   </div>
                   <div className="my-orders-info">
                     <p className="my-orders-title">{itemSummary}</p>
