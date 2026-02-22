@@ -21,6 +21,7 @@
 
 .order-item-thumb-stack {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     height: 60px;
@@ -31,7 +32,8 @@
     width: 55px;
     height: 55px;
     object-fit: contain;
-    position: absolute;
+    position: relative;
+    margin-left: -25px;
     filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.4));
     transition: transform 0.2s ease;
 }
@@ -42,17 +44,15 @@
 }
 
 .order-item-thumb-stack img:nth-child(1) {
-    left: 0;
+    margin-left: 0;
     z-index: 3;
 }
 
 .order-item-thumb-stack img:nth-child(2) {
-    left: 25px;
     z-index: 2;
 }
 
 .order-item-thumb-stack img:nth-child(3) {
-    left: 50px;
     z-index: 1;
 }
 
@@ -67,8 +67,8 @@
     justify-content: center;
     font-size: 14px;
     font-weight: bold;
-    position: absolute;
-    left: 80px;
+    position: relative;
+    margin-left: -20px;
     z-index: 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
