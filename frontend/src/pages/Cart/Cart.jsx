@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 // Kosár oldal komponens
 const Cart = () => {
 
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, currency, setSpecialRequest } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, currency, setSpecialRequest, itemModifications, toggleExclusion, itemAdditions, toggleAddition } = useContext(StoreContext);
   const navigate = useNavigate();
   const [specialRequestText, setSpecialRequestText] = useState('');
 
@@ -48,24 +48,89 @@ const Cart = () => {
           ) : (
             itemsInCart.map((item) => (
               <div className="cart-item-card" key={item._id}>
-                <div className="cart-item-main">
-                  <img src={url + "/images/" + item.image} alt={item.name} />
-                  <div className="cart-item-info">
-                    <p className="cart-item-name">{item.name}</p>
-                    <p className="cart-item-unit-price">{item.price}{currency} / db</p>
+                <div className="cart-item-top">
+                  <div className="cart-item-main">
+                    <img src={url + "/images/" + item.image} alt={item.name} />
+                    <div className="cart-item-info">
+                      <p className="cart-item-name">{item.name}</p>
+                      <p className="cart-item-unit-price">{item.price}{currency} / db</p>
+                    </div>
+                  </div>
+                  <div className="cart-item-actions">
+                    <div className="cart-item-qty">{cartItems[item._id]}</div>
+                    <p className="cart-item-total">{item.price * cartItems[item._id]}{currency}</p>
+                    <button
+                      type="button"
+                      className="cart-item-remove"
+                      onClick={() => removeFromCart(item._id)}
+                    >
+                      Eltávolítás
+                    </button>
                   </div>
                 </div>
-                <div className="cart-item-actions">
-                  <div className="cart-item-qty">{cartItems[item._id]}</div>
-                  <p className="cart-item-total">{item.price * cartItems[item._id]}{currency}</p>
-                  <button
-                    type="button"
-                    className="cart-item-remove"
-                    onClick={() => removeFromCart(item._id)}
-                  >
-                    Eltávolítás
-                  </button>
-                </div>
+                {item.name.toLowerCase().includes("hamburger") && (
+                  <div className="cart-item-exclusions">
+                    <p className="cart-exclusions-title">Mit NE tegyünk bele?</p>
+                    <div className="cart-exclusions-list">
+                      {["Hagyma", "Paradicsom", "Saláta", "Sajt", "Uborka", "Ketchup", "Mustár", "Majonéz"].map(ingredient => {
+                        const isExcluded = (itemModifications[item._id] || []).includes(ingredient);
+                        return (
+                          <button
+                            key={ingredient}
+                            type="button"
+                            title="Kattints ide, ha nem szeretnél kérni bele"
+                            className={`exclusion-btn ${isExcluded ? 'excluded' : ''}`}
+                            onClick={() => toggleExclusion(item._id, ingredient)}
+                          >
+                            {isExcluded ? '❌ Nincs ' : ''}{ingredient}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+                {item.name.toLowerCase().includes("pizza") && (
+                  <div className="cart-item-exclusions">
+                    <p className="cart-exclusions-title">Kérsz rá valamilyen szószt?</p>
+                    <div className="cart-exclusions-list">
+                      {["Tartár", "Ketchup"].map(sauce => {
+                        const isAdded = (itemAdditions[item._id] || []).includes(sauce);
+                        return (
+                          <button
+                            key={sauce}
+                            type="button"
+                            title="Kattints ide, ha kérsz rá"
+                            className={`exclusion-btn ${isAdded ? 'added' : ''}`}
+                            onClick={() => toggleAddition(item._id, sauce)}
+                          >
+                            {isAdded ? '✅ ' : ''}{sauce}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+                {(item.name.toLowerCase().includes("gyros") || item.name.toLowerCase().includes("girosz")) && (
+                  <div className="cart-item-exclusions">
+                    <p className="cart-exclusions-title">Mit NE tegyünk bele?</p>
+                    <div className="cart-exclusions-list">
+                      {["Hagyma", "Paradicsom", "Káposzta", "Uborka", "Csípős"].map(ingredient => {
+                        const isExcluded = (itemModifications[item._id] || []).includes(ingredient);
+                        return (
+                          <button
+                            key={ingredient}
+                            type="button"
+                            title="Kattints ide, ha nem szeretnél kérni bele"
+                            className={`exclusion-btn ${isExcluded ? 'excluded' : ''}`}
+                            onClick={() => toggleExclusion(item._id, ingredient)}
+                          >
+                            {isExcluded ? '❌ Nincs ' : ''}{ingredient}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             ))
           )}
