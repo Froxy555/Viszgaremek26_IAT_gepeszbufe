@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar/Sidebar'
 import { Route, Routes, Navigate } from 'react-router-dom'
@@ -11,13 +11,38 @@ import Edit from './pages/Edit/Edit'
 import { assets, url } from './assets/assets'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Login from './pages/Login/Login';
 
 const App = () => {
+
+  const [token, setToken] = useState(localStorage.getItem('adminToken') || "");
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('admin-theme-dark') === 'true';
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-mode');
+      localStorage.setItem('admin-theme-dark', 'true');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('admin-theme-dark', 'false');
+    }
+  }, [isDarkMode]);
+
+  if (token !== "admin_logged_in") {
+    return (
+      <>
+        <ToastContainer />
+        <Login setToken={setToken} />
+      </>
+    )
+  }
 
   return (
     <div className='app'>
       <ToastContainer />
-      <Navbar />
+      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
       <div className="app-content">
         <Sidebar />

@@ -57,16 +57,13 @@ const FoodItem = ({ image, name, price, desc, id, available = true, rating = 5 }
                 ) : (
                     // Kosár gombok (Hozzáadás vagy Számláló)
                     !getCartCount()
-                        ? <img
-                            className='add'
-                            onClick={handleAddToCart}
-                            src={assets.add_icon_white}
-                            alt=""
-                        />
-                        : <div className="food-item-counter">
-                            <img src={assets.remove_icon_red} onClick={handleRemoveFromCart} alt="" />
+                        ? <div className='food-item-add' onClick={handleAddToCart}>
+                            <span>+</span>
+                        </div>
+                        : <div className="food-item-counter-modern">
+                            <div className="counter-btn minus" onClick={handleRemoveFromCart}>-</div>
                             <p>{getCartCount()}</p>
-                            <img src={assets.add_icon_green} onClick={handleAddToCart} alt="" />
+                            <div className="counter-btn plus" onClick={handleAddToCart}>+</div>
                         </div>
                 )}
             </div>

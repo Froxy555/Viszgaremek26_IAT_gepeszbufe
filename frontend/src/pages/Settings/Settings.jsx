@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // Profil beállítások oldal komponens
 const Settings = () => {
-  const { profileName, setProfileName, profileAvatar, setProfileAvatar, url, token, loadProfile } = useContext(StoreContext);
+  const { profileName, setProfileName, profileAvatar, setProfileAvatar, url, token, loadProfile, t, language, setLanguage } = useContext(StoreContext);
 
   // Helyi állapotok az űrlap mezőinek
   const [name, setName] = useState('');
@@ -92,57 +92,80 @@ const Settings = () => {
 
   return (
     <div className="settings section animate-fade-up">
-      <h2>Profil beállítások</h2>
-      <form className="settings-card" onSubmit={handleSave}>
-        <div className="settings-avatar-row">
-          <div className="settings-avatar-preview">
-            {avatarPreview ? (
-              <img src={avatarPreview} alt="Profilkép előnézet" />
-            ) : (
-              <div className="settings-avatar-placeholder">KB</div>
-            )}
+      <h2>{t('settings.title')}</h2>
+
+      <div className="settings-layout">
+        <form className="settings-card" onSubmit={handleSave}>
+          <div className="settings-avatar-row">
+            <div className="settings-avatar-preview">
+              {avatarPreview ? (
+                <img src={avatarPreview} alt="Profilkép előnézet" />
+              ) : (
+                <div className="settings-avatar-placeholder">KB</div>
+              )}
+            </div>
+            <div className="settings-avatar-actions">
+              <p>{t('settings.profile_pic')}</p>
+              <label className="settings-upload-button">
+                {t('settings.upload')}
+                <input type="file" accept="image/*" onChange={handleAvatarChange} />
+              </label>
+              <p className="settings-hint">{t('settings.upload_hint')}</p>
+            </div>
           </div>
-          <div className="settings-avatar-actions">
-            <p>Profilkép</p>
-            <label className="settings-upload-button">
-              Kép feltöltése
-              <input type="file" accept="image/*" onChange={handleAvatarChange} />
-            </label>
-            <p className="settings-hint">Ajánlott: 1:1 arányú (négyzet) kép.</p>
+
+          <div className="settings-field-group">
+            <label>{t('settings.name_label')}</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder={t('settings.name_label')}
+            />
+          </div>
+
+          <div className="settings-field-group settings-password-group">
+            <label>{t('settings.password_title')}</label>
+            <input
+              type="password"
+              value={currentPassword}
+              onChange={(e) => setCurrentPassword(e.target.value)}
+              placeholder={t('settings.password_current')}
+            />
+            <input
+              type="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              placeholder={t('settings.password_new')}
+            />
+            <p className="settings-hint">
+              {t('settings.password_hint')}
+            </p>
+          </div>
+
+          <button className="settings-save" type="submit">{t('settings.save')}</button>
+        </form>
+
+        <div className="settings-card">
+          <div className="settings-field-group">
+            <label>{t('settings.language_title')}</label>
+            <div className="language-options">
+              <div
+                className={`language-option ${language === 'hu' ? 'active' : ''}`}
+                onClick={() => setLanguage('hu')}
+              >
+                <span>🇭🇺</span> {t('settings.language_hu')}
+              </div>
+              <div
+                className={`language-option ${language === 'en' ? 'active' : ''}`}
+                onClick={() => setLanguage('en')}
+              >
+                <span>🇬🇧</span> {t('settings.language_en')}
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="settings-field-group">
-          <label>Megjelenített név</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Név"
-          />
-        </div>
-
-        <div className="settings-field-group settings-password-group">
-          <label>Jelszó módosítása</label>
-          <input
-            type="password"
-            value={currentPassword}
-            onChange={(e) => setCurrentPassword(e.target.value)}
-            placeholder="Jelenlegi jelszó"
-          />
-          <input
-            type="password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            placeholder="Új jelszó"
-          />
-          <p className="settings-hint">
-            A jelszó módosítás a háttérben is frissül. A változások új böngészőben is érvényesek lesznek.
-          </p>
-        </div>
-
-        <button className="settings-save" type="submit">Mentés</button>
-      </form>
+      </div>
     </div>
   );
 };

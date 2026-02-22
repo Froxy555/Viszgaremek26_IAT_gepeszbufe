@@ -4,9 +4,9 @@
     bottom: 20px;
 
     width: 260px;
-    background-color: white;
+    background-color: var(--card-bg, white);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     padding: 20px;
     z-index: 90;
 
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid var(--border-color, #f0f0f0);
     padding-bottom: 10px;
     margin-bottom: 5px;
 }
@@ -30,7 +30,7 @@
 .cart-sidebar-header h3 {
     font-size: 18px;
     font-weight: 600;
-    color: #262626;
+    color: var(--text-color, #262626);
     margin: 0;
 }
 
@@ -47,7 +47,7 @@
     align-items: center;
     gap: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 1px solid var(--border-color, #f9f9f9);
 }
 
 .cart-sidebar-item img {
@@ -65,7 +65,7 @@
     font-size: 14px;
     font-weight: 500;
     margin: 0 0 4px 0;
-    color: #333;
+    color: var(--text-color, #333);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -80,7 +80,7 @@
 }
 
 .cart-sidebar-item-quantity {
-    background-color: #ffe8e4;
+    background-color: rgba(255, 76, 36, 0.1);
     color: #FF4C24;
     font-size: 12px;
     font-weight: 700;
@@ -93,7 +93,7 @@
     flex-direction: column;
     gap: 12px;
     margin-top: 10px;
-    border-top: 2px solid #f0f0f0;
+    border-top: 2px solid var(--border-color, #f0f0f0);
     padding-top: 15px;
 }
 
@@ -103,7 +103,7 @@
     align-items: center;
     font-size: 16px;
     font-weight: 700;
-    color: #262626;
+    color: var(--text-color, #262626);
 }
 
 .cart-sidebar-buttons {

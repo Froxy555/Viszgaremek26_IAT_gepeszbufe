@@ -1,37 +1,152 @@
 .list-table {
-    background: #ffffff;
-    border-radius: 24px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
+    width: 100%;
 }
 
 .list-table-format {
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-columns: 0.5fr 2fr 1.5fr 1fr 0.5fr 0.5fr;
     align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 13px;
+    gap: 15px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.list-table-format:hover:not(.title) {
+    background-color: var(--input-bg);
 }
 
 .list-table-format.title {
-    background-color: #f9f9f9;
+    background-color: var(--input-bg);
     font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.05em;
 }
 
 .list-table-format img {
     width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media(max-width:600px) {
+.action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 16px;
+}
 
+.edit-btn {
+    background-color: color-mix(in srgb, #3b82f6 15%, transparent);
+    color: #3b82f6;
+}
+
+.edit-btn:hover {
+    background-color: color-mix(in srgb, #3b82f6 30%, transparent);
+    color: #60a5fa;
+}
+
+.delete-btn {
+    background-color: color-mix(in srgb, #dc2626 15%, transparent);
+    color: #dc2626;
+}
+
+.delete-btn:hover {
+    background-color: color-mix(in srgb, #dc2626 30%, transparent);
+    color: #f87171;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
     .list-table-format {
-        grid-template-columns: 1fr 3fr 1fr;
-        gap: 15px;
+        padding: 12px 16px;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .list-table-format.title {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 650px) {
+    .list-table-format {
+        display: grid;
+        grid-template-columns: 75px 1fr auto auto;
+        grid-template-areas:
+            "img name edit delete"
+            "img category category category"
+            "img price price price";
+        padding: 16px;
+        gap: 8px 10px;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .list-table-format.title {
         display: none;
+    }
+
+    .list-table-format img {
+        grid-area: img;
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+        align-self: start;
+    }
+
+    .list-table-format .item-name {
+        grid-area: name;
+        font-weight: 600;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .list-table-format .item-category {
+        grid-area: category;
+        font-size: 12px;
+        color: var(--text-color);
+        opacity: 0.8;
+        background: var(--input-bg);
+        padding: 4px 10px;
+        border-radius: 999px;
+        justify-self: start;
+        margin: 0;
+    }
+
+    .list-table-format .item-price {
+        grid-area: price;
+        font-weight: bold;
+        color: #ff4c24;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .list-table-format .action-btn {
+        position: static;
+        margin: 0;
+    }
+
+    .list-table-format .edit-btn {
+        grid-area: edit;
+    }
+
+    .list-table-format .delete-btn {
+        grid-area: delete;
     }
 }

@@ -40,6 +40,10 @@ const orderSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    paymentMethod: {
+        type: String,
+        default: "Stripe"
+    },
     randomCode: {
         type: String,
         required: true,

@@ -10,7 +10,7 @@ const MobileCartButton = () => {
     const location = useLocation();
 
     // Számoljuk össze a kosárban lévő összes terméket
-    const totalItems = Object.values(cartItems).reduce((acc, qty) => acc + qty, 0);
+    const totalItems = Object.values(cartItems || {}).reduce((acc, qty) => acc + qty, 0);
 
     // Ne jelenjen meg, ha a kosár üres, vagy ha épp a kosár/rendelés oldalon vagyunk
     const isHidden =

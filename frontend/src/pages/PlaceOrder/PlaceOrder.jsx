@@ -23,7 +23,7 @@ const PlaceOrder = () => {
   });
 
   // Kontextusból származó globális adatok és függvények
-  const { getTotalCartAmount, token, food_list, cartItems, url, setCartItems, currency, specialRequest, userData } = useContext(StoreContext);
+  const { getTotalCartAmount, token, food_list, cartItems, url, setCartItems, currency, specialRequest, userData, itemModifications, setItemModifications, itemAdditions, setItemAdditions } = useContext(StoreContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -72,7 +72,12 @@ const PlaceOrder = () => {
 
     // Rendelt tételek kigyűjtése
     let orderItems = food_list.filter(item => cartItems[item._id] > 0)
-      .map(item => ({ ...item, quantity: cartItems[item._id] }));
+      .map(item => ({
+        ...item,
+        quantity: cartItems[item._id],
+        exclusions: itemModifications[item._id] || [],
+        additions: itemAdditions[item._id] || []
+      }));
 
     // Validáció: szünet kiválasztása kötelező
     if (!data.city) {
@@ -108,6 +113,8 @@ const PlaceOrder = () => {
 
         if (response.data.success) {
           localStorage.removeItem("specialRequest");
+          setItemModifications({});
+          setItemAdditions({});
           window.location.replace(response.data.session_url);
         } else {
           toast.error("Valami hiba történt");
@@ -126,6 +133,8 @@ const PlaceOrder = () => {
 
           localStorage.removeItem("specialRequest");
           setCartItems({});
+          setItemModifications({});
+          setItemAdditions({});
           // Átirányítás a siker oldalra
           navigate(`/order-success/${response.data.orderId}`, {
             state: { randomCode: response.data.randomCode }

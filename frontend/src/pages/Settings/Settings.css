@@ -8,7 +8,7 @@
 }
 
 .settings-card {
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 20px 20px 24px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -29,7 +29,7 @@
   height: 88px;
   border-radius: 50%;
   overflow: hidden;
-  background: #f4f4f4;
+  background: var(--input-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +48,8 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  color: #777;
+  color: var(--text-color);
+  opacity: 0.5;
 }
 
 .settings-avatar-actions p {
@@ -81,7 +82,8 @@
 
 .settings-hint {
   font-size: 12px;
-  color: #777;
+  color: var(--text-color);
+  opacity: 0.6;
   margin-top: 4px;
 }
 
@@ -94,21 +96,28 @@
 .settings-field-group label {
   font-size: 14px;
   font-weight: 500;
+  color: var(--text-color);
+  opacity: 0.8;
 }
 
 .settings-field-group input {
   border-radius: 10px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-color);
   padding: 10px 12px;
   font-size: 14px;
   outline: none;
+  transition: all 0.2s ease;
 }
 
 .settings-field-group input:focus {
   border-color: #ff4c24;
+  background: var(--card-bg);
+  box-shadow: 0 0 0 2px rgba(255, 76, 36, 0.18);
 }
 
-.settings-password-group input + input {
+.settings-password-group input+input {
   margin-top: 4px;
 }
 
@@ -124,6 +133,59 @@
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(255, 76, 36, 0.35);
+}
+
+.settings-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.settings-layout>.settings-card {
+  flex: 1;
+  min-width: 320px;
+}
+
+.language-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.language-option span {
+  font-size: 20px;
+}
+
+.language-option:hover {
+  border-color: #ff4c24;
+}
+
+.language-option.active {
+  border-color: #ff4c24;
+  background: color-mix(in srgb, #ff4c24 8%, transparent);
+  color: #ff4c24;
+}
+
+@media (max-width: 768px) {
+  .settings-layout {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {

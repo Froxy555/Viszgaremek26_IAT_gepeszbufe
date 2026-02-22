@@ -1,31 +1,201 @@
-.food-display{
-  margin-top: 30px;
+.food-display.section {
+  margin-top: 5px;
 }
 
-.food-display h2{
-  font-size: max(2vw,24px);
+.food-display h2 {
+  font-size: max(2vw, 24px);
   font-weight: 600;
 }
 
 .food-display-header {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.food-display-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.food-search-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 560px;
+  flex: 1;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.food-search-wrapper:focus-within {
+  border-color: #FF4C24;
+  box-shadow: 0 6px 16px rgba(255, 76, 36, 0.15);
+  background: var(--card-bg);
+}
+
+.food-search-wrapper .search-icon-svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.5;
+  color: var(--text-color);
+  margin-right: -4px;
+  pointer-events: none;
+}
+
+.food-sort-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--border-color);
+  padding-left: 4px;
+  margin-left: 4px;
+}
+
+.sort-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.sort-trigger:hover {
+  background: var(--card-bg);
+}
+
+.food-sort-dropdown .sort-icon-svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-color);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.custom-sort-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: -10px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  list-style: none;
+  padding: 8px 0;
+  z-index: 100;
+  animation: fadeInDown 0.2s ease-out forwards;
+}
+
+html.dark-mode .custom-sort-menu {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-sort-menu li {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.custom-sort-menu li:hover:not(.sort-header) {
+  background: var(--input-bg);
+  color: #FF4C24;
+}
+
+.custom-sort-menu li.active {
+  color: #FF4C24;
+  font-weight: 500;
+  background: color-mix(in srgb, #ff4c24 8%, transparent);
+}
+
+.custom-sort-menu li.sort-header {
+  font-weight: 600;
+  color: var(--text-color);
+  opacity: 0.5;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: default;
 }
 
 .food-search-input {
-  max-width: 320px;
-  width: 100%;
-  border-radius: 999px;
-  border: 2px solid rgba(255, 76, 36, 0.12);
-  padding: 10px 16px;
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 14px;
   font-size: 14px;
   outline: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  color: var(--text-color);
 }
 
-.food-search-input:focus {
-  border-color: #FF4C24;
+.food-search-input::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.food-filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card-bg);
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  opacity: 1;
+  background: var(--input-bg);
+}
+
+.filter-btn.active {
+  background: #FF4C24;
+  color: #fff;
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(255, 76, 36, 0.3);
 }
 
 .food-display-list {
@@ -36,7 +206,7 @@
   row-gap: 50px;
 }
 
-.food-display-list > * {
+.food-display-list>* {
   animation: fadeUp 0.5s ease-out both;
 }
 

@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { food_list, menu_list } from "../assets/assets";
+import { translations } from "../utils/translations";
 import axios from "axios";
 export const StoreContext = createContext(null);
 
@@ -13,7 +14,20 @@ const StoreContextProvider = (props) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [profileName, setProfileName] = useState("");
     const [profileAvatar, setProfileAvatar] = useState("");
+    const [itemModifications, setItemModifications] = useState({}); // Stores exclusions per item ID
+    const [itemAdditions, setItemAdditions] = useState({}); // Stores additions per item ID
     const currency = " Ft";
+
+    // Translation State
+    const [language, setLanguage] = useState(localStorage.getItem('language') || 'hu');
+
+    useEffect(() => {
+        localStorage.setItem('language', language);
+    }, [language]);
+
+    const t = (key) => {
+        return translations[language]?.[key] || translations['hu']?.[key] || key;
+    };
 
     // Kosárba tétel függvény
     const addToCart = async (itemId) => {
@@ -53,15 +67,57 @@ const StoreContextProvider = (props) => {
         return totalAmount;
     }
 
+    // Összetevő kizárása/hozzátekeredése egy adott ételnél (pl. Hamburger)
+    const toggleExclusion = (itemId, ingredient) => {
+        setItemModifications(prev => {
+            const itemExclusions = prev[itemId] || [];
+            if (itemExclusions.includes(ingredient)) {
+                return { ...prev, [itemId]: itemExclusions.filter(i => i !== ingredient) };
+            } else {
+                return { ...prev, [itemId]: [...itemExclusions, ingredient] };
+            }
+        });
+    }
+
+    // Extrák/szószok hozzáadása (pl. Pizzaszelethez tartár)
+    const toggleAddition = (itemId, addition) => {
+        setItemAdditions(prev => {
+            const additions = prev[itemId] || [];
+            if (additions.includes(addition)) {
+                return { ...prev, [itemId]: additions.filter(i => i !== addition) };
+            } else {
+                return { ...prev, [itemId]: [...additions, addition] };
+            }
+        });
+    }
+
     // Étel lista betöltése
     const fetchFoodList = async () => {
-        const response = await axios.get(url + "/api/food/list");
-        setFoodList(response.data.data)
+        try {
+            const response = await axios.get(url + "/api/food/list");
+            if (response.data && response.data.data) {
+                setFoodList(response.data.data);
+            } else {
+                setFoodList([]);
+            }
+        } catch (error) {
+            console.error("Hiba az étel lista betöltésekor:", error);
+            setFoodList([]);
+        }
     }
 
     const loadCartData = async (token) => {
-        const response = await axios.post(url + "/api/cart/get", {}, { headers: token });
-        setCartItems(response.data.cartData);
+        try {
+            const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: token.token || token } });
+            if (response.data && response.data.success) {
+                setCartItems(response.data.cartData || {});
+            } else {
+                setCartItems({});
+            }
+        } catch (error) {
+            console.error("Hiba a kosáradatok betöltésekor:", error);
+            setCartItems({});
+        }
     }
 
     const [userData, setUserData] = useState({}); // Teljes felhasználói profil tárolása
@@ -128,7 +184,16 @@ const StoreContextProvider = (props) => {
         profileAvatar,
         setProfileAvatar,
         loadProfile,
-        userData
+        userData,
+        language,
+        setLanguage,
+        t,
+        itemModifications,
+        setItemModifications,
+        toggleExclusion,
+        itemAdditions,
+        setItemAdditions,
+        toggleAddition
     };
 
     return (

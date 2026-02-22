@@ -105,10 +105,22 @@ const OrderSuccess = () => {
           <h3>Rendelés részletei</h3>
           <ul>
             {order.items.map((item) => (
-              <li key={item._id || item.name}>
-                <span className="item-name">{item.name}</span>
-                <span className="item-qty">x {item.quantity}</span>
-                <span className="item-price">{item.price * item.quantity}{currency}</span>
+              <li key={item._id || item.name} style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                  <span className="item-name">{item.name}</span>
+                  <span className="item-qty">x {item.quantity}</span>
+                  <span className="item-price">{item.price * item.quantity}{currency}</span>
+                </div>
+                {item.exclusions && item.exclusions.length > 0 && (
+                  <span style={{ fontSize: '13px', color: '#ff4c24', fontWeight: '500' }}>
+                    Nincs benne: {item.exclusions.join(', ')}
+                  </span>
+                )}
+                {item.additions && item.additions.length > 0 && (
+                  <span style={{ fontSize: '13px', color: '#16a34a', fontWeight: '500' }}>
+                    Kér rá: {item.additions.join(', ')}
+                  </span>
+                )}
               </li>
             ))}
           </ul>

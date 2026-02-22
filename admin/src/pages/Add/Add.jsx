@@ -65,6 +65,7 @@ const Add = ({ url }) => {
 
     return (
         <div className='add'>
+            <h2 className="add-title">Új termék hozzáadása</h2>
             <form className='flex-col' onSubmit={onSubmitHandler}>
                 <div className='add-img-upload flex-col'>
                     <p>Kép feltöltése</p>

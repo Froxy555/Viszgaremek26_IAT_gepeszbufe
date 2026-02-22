@@ -5,9 +5,13 @@
     padding: 18px 14px;
     margin-right: 20px;
     border-radius: 24px;
-    background: #ffffff;
+    background: var(--card-bg);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     font-size: max(1vw, 10px);
+}
+
+html.dark-mode .sidebar {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-options {
@@ -24,8 +28,13 @@
     padding: 9px 12px;
     border-radius: 999px;
     cursor: pointer;
-    color: #555;
-    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.sidebar-option:hover {
+    opacity: 1;
 }
 
 .sidebar-option .sidebar-icon {
@@ -33,8 +42,9 @@
 }
 
 .sidebar-option.active {
-    background-color: #fff4f2;
+    background-color: color-mix(in srgb, #ff4c24 8%, transparent);
     color: #ff4c24;
+    opacity: 1;
     box-shadow: 0 6px 14px rgba(255, 76, 36, 0.25);
 }
 

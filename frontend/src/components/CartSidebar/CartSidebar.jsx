@@ -61,7 +61,7 @@ const CartSidebar = () => {
                     <span>{totalAmount} {currency}</span>
                 </div>
                 <div className="cart-sidebar-buttons">
-                    <button onClick={() => navigate('/order')} className="cart-sidebar-btn btn-checkout">Pénztárhoz</button>
+                    <button onClick={() => navigate('/cart')} className="cart-sidebar-btn btn-checkout">Irány a Kosár</button>
                 </div>
             </div>
         </div>

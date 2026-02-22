@@ -4,6 +4,8 @@ import axios from 'axios'
 import { StoreContext } from '../../Context/StoreContext';
 import { assets } from '../../assets/assets';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { createPortal } from 'react-dom';
 
 // Rendeléseim oldal komponens
 const MyOrders = () => {
@@ -11,6 +13,11 @@ const MyOrders = () => {
   const [data, setData] = useState([]);
   const { url, token, currency } = useContext(StoreContext);
   const navigate = useNavigate();
+
+  // Állapotok a lemondás módalhoz
+  const [showCancelModal, setShowCancelModal] = useState(false);
+  const [cancelingOrder, setCancelingOrder] = useState(null);
+  const [cancelReason, setCancelReason] = useState("");
 
   // Rendelések lekérése
   const fetchOrders = async () => {
@@ -46,6 +53,48 @@ const MyOrders = () => {
     fetchOrders();
   }, [token])
 
+  // Lemondás panel megjelenítése
+  const openCancelModal = (order) => {
+    setCancelingOrder(order);
+    setCancelReason("");
+    setShowCancelModal(true);
+  }
+
+  const closeCancelModal = () => {
+    setCancelingOrder(null);
+    setCancelReason("");
+    setShowCancelModal(false);
+  }
+
+  // Tényleges lemondás API hívás
+  const handleCancelSubmit = async () => {
+    if (!cancelingOrder) return;
+
+    const isReasonRequired = cancelingOrder.status === "Készítés alatt" || cancelingOrder.status === "Elkészült";
+    if (isReasonRequired && (!cancelReason || cancelReason.trim() === "")) {
+      toast.error("Ebben a fázisban kötelező megindokolni a lemondást!");
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${url}/api/order/delete`, {
+        orderId: cancelingOrder._id,
+        reason: cancelReason
+      }, { headers: { token } });
+
+      if (response.data.success) {
+        toast.success("Rendelés lemondva.");
+        closeCancelModal();
+        fetchOrders(); // Újratöltjük a listát a friss ststuszokkal
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error.response?.data?.message || "Hiba történt a lemondás során.");
+    }
+  }
+
   return (
     <div className='my-orders section animate-fade-up'>
       <h2>Rendeléseim</h2>
@@ -57,11 +106,10 @@ const MyOrders = () => {
           </div>
         ) : (
           data.map((order, index) => {
-            const itemSummary = order.items.map((item, idx) => (
-              idx === order.items.length - 1
-                ? `${item.name} x ${item.quantity}`
-                : `${item.name} x ${item.quantity}, `
-            ));
+            const itemSummary = order.items.map((item, idx) => {
+              const baseText = `${item.name} x ${item.quantity}`;
+              return idx === order.items.length - 1 ? baseText : baseText + ', ';
+            });
 
             const statusLabel = order.status;
 
@@ -81,6 +129,16 @@ const MyOrders = () => {
                   </div>
                   <div className="my-orders-info">
                     <p className="my-orders-title">{itemSummary}</p>
+                    {order.items.some(item => item.exclusions && item.exclusions.length > 0) && (
+                      <p className="my-orders-exclusions" style={{ color: '#ff4c24', fontSize: '12px', fontWeight: '500', margin: '4px 0 0 0' }}>
+                        Nincs benne: {Array.from(new Set(order.items.flatMap(item => item.exclusions || []))).join(', ')}
+                      </p>
+                    )}
+                    {order.items.some(item => item.additions && item.additions.length > 0) && (
+                      <p className="my-orders-additions" style={{ color: '#16a34a', fontSize: '12px', fontWeight: '500', margin: '4px 0 0 0' }}>
+                        Kér rá: {Array.from(new Set(order.items.flatMap(item => item.additions || []))).join(', ')}
+                      </p>
+                    )}
                     <p className="my-orders-meta">Elemek: {order.items.length} • Kód: <strong>{order.randomCode}</strong></p>
                   </div>
                 </div>
@@ -99,6 +157,15 @@ const MyOrders = () => {
                       Rendelés részletei
                     </button>
                     <button type="button" onClick={fetchOrders}>Állapot frissítése</button>
+                    {(!["Átvéve", "Törölve", "Vásárló által lemondva"].includes(order.status)) && (
+                      <button
+                        type="button"
+                        className="my-orders-cancel-btn"
+                        onClick={() => openCancelModal(order)}
+                      >
+                        Lemondás
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -106,6 +173,31 @@ const MyOrders = () => {
           })
         )}
       </div>
+
+      {showCancelModal && cancelingOrder && createPortal(
+        <div className="cancel-modal-overlay">
+          <div className="cancel-modal">
+            <h3>Rendelés lemondása</h3>
+            <p className="cancel-modal-desc">
+              Biztosan le szeretnéd mondani a rendelésedet?
+              {(cancelingOrder.status === "Készítés alatt" || cancelingOrder.status === "Elkészült")
+                ? " Mivel már készítjük/elkészítettük, kérünk, KÖTELEZŐEN röviden indokold meg a lemondást:"
+                : " Kérünk, röviden indokold meg (nem kötelező):"}
+            </p>
+            <textarea
+              value={cancelReason}
+              onChange={(e) => setCancelReason(e.target.value)}
+              placeholder="Pl.: Közbejött egy felmérő..."
+              rows={3}
+            />
+            <div className="cancel-modal-actions">
+              <button className="cancel-modal-btn cancel" onClick={handleCancelSubmit}>Igen, lemondom</button>
+              <button className="cancel-modal-btn keep" onClick={closeCancelModal}>Mégsem</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   )
 }

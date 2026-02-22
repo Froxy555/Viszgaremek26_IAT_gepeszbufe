@@ -8,7 +8,8 @@ import {
     verifyOrder,
     placeOrderCod,
     getOrderById,
-    getStats
+    getStats,
+    deleteOrder
 } from '../controllers/orderController.js';
 
 const orderRouter = express.Router();
@@ -40,5 +41,8 @@ orderRouter.post("/verify", verifyOrder);
 
 // új rendelés leadása (Utánvétes fizetés)
 orderRouter.post("/placecod", authMiddleware, placeOrderCod);
+
+// megrendelés lemondása / törlése (user oldali)
+orderRouter.post("/delete", authMiddleware, deleteOrder);
 
 export default orderRouter;

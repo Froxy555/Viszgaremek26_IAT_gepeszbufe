@@ -53,11 +53,11 @@ const List = ({ url }) => {
           return (
             <div key={index} className='list-table-format'>
               <img src={`${url}/images/` + item.image} alt="" />
-              <p>{item.name}</p>
-              <p>{item.category}</p>
-              <p>{item.price}{currency}</p>
-              <p className='cursor' onClick={() => navigate('/edit', { state: { product: item } })}>✎</p>
-              <p className='cursor' onClick={() => removeFood(item._id)}>x</p>
+              <p className="item-name">{item.name}</p>
+              <p className="item-category">{item.category}</p>
+              <p className="item-price">{item.price}{currency}</p>
+              <div className='action-btn edit-btn cursor' onClick={() => navigate('/edit', { state: { product: item } })}>✎</div>
+              <div className='action-btn delete-btn cursor' onClick={() => removeFood(item._id)}>✕</div>
             </div>
           )
         })}

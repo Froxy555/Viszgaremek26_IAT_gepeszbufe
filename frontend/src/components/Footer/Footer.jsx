@@ -1,47 +1,34 @@
 import React from 'react'
 import './Footer.css'
 import { assets } from '../../assets/assets'
+import { useNavigate } from 'react-router-dom'
 
 // Lábléc komponens
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='footer' id='footer'>
       <div className="footer-content">
-        {/* Bal oldali tartalom: logó, szlogen, közösségi média */}
-        <div className="footer-content-left">
+        {/* Egyetlen letisztult sor a tartalmaknak asztali nézetben */}
+        <h2 className="footer-logo">GépészBüfé</h2>
 
-          <p>GépészBüfé - Lakj jól, ne várakozz!</p>
-          <div className="footer-social-icons">
-            <img src={assets.facebook_icon} alt="" />
-            <img src={assets.twitter_icon} alt="" />
-            <img src={assets.linkedin_icon} alt="" />
-          </div>
-        </div>
+        <ul className="footer-links">
+          <li onClick={() => { window.scrollTo(0, 0); navigate('/'); }}>Főoldal</li>
+          <li onClick={() => navigate('/?section=menu')}>Menü</li>
+          <li onClick={() => { window.scrollTo(0, 0); navigate('/myorders'); }}>Rendelések</li>
+          <li onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}>Kapcsolat</li>
+        </ul>
 
-        {/* Középső tartalom: cég neve és navigációs linkek */}
-        <div className="footer-content-center">
-          <h2>GépészBüfé</h2>
-          <ul>
-            <li>Főoldal</li>
-            <li>Menü</li>
-            <li>Rendelések</li>
-            <li>Kapcsolat</li>
-          </ul>
-        </div>
-
-        {/* Jobb oldali tartalom: kapcsolati információk */}
-        <div className="footer-content-right">
-          <h2>Kapcsolat</h2>
-          <ul>
-            <li>+36-20-123-4567</li>
-            <li>gepeszbufe@gmail.com</li>
-          </ul>
+        <div className="footer-contact">
+          <p>+36-20-123-4567</p>
+          <p>gepeszbufe@gmail.com</p>
         </div>
       </div>
-      <hr />
 
-      {/* Szerzői jogi információ */}
-      <p className="footer-copyright">Copyright 2025 © GepeszBufe - Minden jog fentartva.</p>
+      {/* Szerzői jogi információ egy vékony elválasztó felett/alatt */}
+      <hr />
+      <p className="footer-copyright">13.A IAT 2026 © GepeszBufe - Minden jog fentartva.</p>
     </div>
   )
 }

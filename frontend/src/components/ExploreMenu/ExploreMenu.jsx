@@ -5,12 +5,12 @@ import { StoreContext } from '../../Context/StoreContext'
 // menü böngészés sáv komponense
 const ExploreMenu = ({ category, setCategory }) => {
 
-  const { menu_list } = useContext(StoreContext);
+  const { menu_list, t } = useContext(StoreContext);
 
   return (
     <div className='explore-menu section animate-fade-up' id='explore-menu'>
-      <h1>Fedezd fel választékainkat</h1>
-      <p className='explore-menu-text'>Válassz egy vagy több ételt a menünből, rendeld meg online és már szállítjuk is hozzád 😊</p>
+      <h1>{t('explore.title')}</h1>
+      <p className='explore-menu-text'>{t('explore.desc')}</p>
 
       {/* kategória lista */}
       <div className="explore-menu-list">

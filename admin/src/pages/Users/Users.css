@@ -1,32 +1,152 @@
+.users {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    color: var(--text-color);
+    font-size: 15px;
+    padding: 0 16px;
+}
+
+.users-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.users-table {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    width: 100%;
+}
+
 .users-table-format {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1.5fr 1fr 1fr;
+    grid-template-columns: 80px 2fr 2fr 1.5fr 80px;
     align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
+    gap: 15px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.users-table-format:hover:not(.title) {
+    background-color: var(--input-bg);
 }
 
 .users-table-format.title {
-    background-color: #f9f9f9;
+    background-color: var(--input-bg);
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.05em;
 }
 
 .user-avatar {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-color);
 }
 
 .small-id {
-    font-size: 10px;
-    color: #666;
+    font-size: 11px;
+    color: var(--text-color);
+    opacity: 0.5;
+    letter-spacing: 0.5px;
 }
 
-@media (max-width: 600px) {
+.user-email,
+.user-phone {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.action-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
     .users-table-format {
-        grid-template-columns: 1fr 1fr 1fr;
+        padding: 12px 16px;
+        gap: 10px;
+        font-size: 13px;
+        grid-template-columns: 60px 1.5fr 1.5fr 1fr 60px;
     }
 
+    .users-table-format.title {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 650px) {
+    .users-table-format {
+        display: grid;
+        grid-template-columns: 60px 1fr auto;
+        grid-template-areas:
+            "img info delete"
+            "img email email"
+            "img phone phone";
+        padding: 16px;
+        gap: 8px 10px;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .users-table-format.title {
+        display: none;
+    }
+
+    .users-table-format img {
+        grid-area: img;
+        align-self: start;
+        width: 50px;
+        height: 50px;
+    }
+
+    .user-info-col {
+        grid-area: info;
+        margin: 0;
+    }
+
+    .users-table-format .user-email {
+        grid-area: email;
+        font-size: 13px;
+        color: var(--text-color);
+        opacity: 0.6;
+    }
+
+    .users-table-format .user-phone {
+        grid-area: phone;
+        font-weight: bold;
+        color: #ff4c24;
+        font-size: 13px;
+    }
+
+    .action-col {
+        grid-area: delete;
+        justify-content: flex-end;
+    }
 }

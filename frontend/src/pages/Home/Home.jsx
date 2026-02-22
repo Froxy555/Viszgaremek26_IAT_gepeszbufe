@@ -9,22 +9,24 @@ const Home = () => {
   const [category, setCategory] = useState('All');
   const location = useLocation();
 
-  // Görgetés a menü szekcióhoz URL paraméter alapján
+  // Görgetés a szekciókhoz URL paraméter alapján
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    if (params.get('section') === 'menu') {
+    const section = params.get('section');
+    if (section === 'menu') {
       const el = document.getElementById('explore-menu');
-      if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 0);
-      }
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+    } else if (section === 'contact') {
+      const el = document.getElementById('footer');
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
     }
-  }, [location]);
+  }, [location.search]);
 
   return (
     <>
       <Header />
       <ExploreMenu setCategory={setCategory} category={category} />
-      <FoodDisplay category={category} />
+      <FoodDisplay category={category} setCategory={setCategory} />
     </>
   );
 };

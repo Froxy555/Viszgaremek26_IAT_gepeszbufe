@@ -6,7 +6,7 @@
 }
 
 .order-success-card {
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 24px;
   padding: 24px 26px 26px;
   max-width: 520px;
@@ -62,7 +62,8 @@
 
 .order-success-subtitle {
   font-size: 14px;
-  color: #555;
+  color: var(--text-color);
+  opacity: 0.8;
   margin-top: 4px;
 }
 
@@ -73,7 +74,8 @@
 .order-success-code p {
   margin: 0;
   font-size: 13px;
-  color: #777;
+  color: var(--text-color);
+  opacity: 0.7;
 }
 
 .order-success-code span {
@@ -98,7 +100,8 @@
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  color: #555;
+  color: var(--text-color);
+  opacity: 0.8;
   margin-bottom: 4px;
 }
 
@@ -142,7 +145,8 @@
 .item-qty {
   width: 60px;
   text-align: center;
-  color: #777;
+  color: var(--text-color);
+  opacity: 0.7;
 }
 
 .item-price {
@@ -171,8 +175,8 @@
 }
 
 .order-success-actions button:not(.primary) {
-  background: #f4f4f5;
-  color: #444;
+  background: var(--input-bg);
+  color: var(--text-color);
 }
 
 @media (max-width: 600px) {
