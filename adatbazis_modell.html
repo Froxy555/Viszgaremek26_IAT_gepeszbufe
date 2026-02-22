@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gépészbüfé Adatbázis Modell (ER Diagram)</title>
+    <!-- Mermaid JS a diagram automatikus generálásához -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #f7f7f9;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #ff4c24;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            max-width: 800px;
+            text-align: center;
+        }
+        .diagram-container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            width: 100%;
+            max-width: 900px;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gépészbüfé Adatbázis Modellek</h1>
+    <p>Ez egy automatikusan generált vizuális (Entity-Relationship) diagram rendszere. Megmutatja az összes MongoDB Gyűjteményt (Collection), a mezőiket és a köztük lévő logikai kapcsolatokat a szerveren.</p>
+
+    <div class="diagram-container">
+        <!-- Itt indul a Mermaid kód -->
+        <div class="mermaid">
+            erDiagram
+                USER ||--o{ ORDER : "Leadja (userId)"
+                USER ||--o{ OTP : "Igényel (email alapján)"
+                FOOD }o--o{ USER : "Kosárba rak (cartData)"
+                ORDER }o--o{ FOOD : "Tartalmaz (items tömbben)"
+
+                USER {
+                    ObjectId _id PK "Egyedi azonosító"
+                    String name "Teljes név"
+                    String email "E-mail (egyedi)"
+                    String password "Titkosított jelszó"
+                    String phone "Telefonszám"
+                    String avatarUrl "Profilkép címe"
+                    Object cartData "Kosár tartalma (ÉtelID: Darab)"
+                }
+
+                FOOD {
+                    ObjectId _id PK "Egyedi azonosító"
+                    String name "Étel neve"
+                    String description "Étel leírása"
+                    Number price "Ár (Ft)"
+                    String category "Kategória (pl. Italok)"
+                    String image "Kép neve a szerveren"
+                    Boolean available "Rendelhető-e"
+                    Number rating "Értékelés"
+                }
+
+                ORDER {
+                    ObjectId _id PK "Egyedi rendelés ID"
+                    String userId FK "Felhasználó ID-ja"
+                    Array items "Rendelt ételek másolatai tömbben"
+                    Number amount "Végösszeg (Ft)"
+                    Object address "Kiszállítási cím / Asztal infók"
+                    String status "Rendelés állapota"
+                    String note "Megjegyzés / Kérések"
+                    Date date "Leadás dátuma"
+                    Boolean payment "Kifizetve?"
+                    String paymentMethod "Fizetési mód (Stripe / Készpénz)"
+                    String randomCode "4 számjegyű átvételi kód"
+                }
+
+                OTP {
+                    ObjectId _id PK "Egyedi ID"
+                    String email FK "Felhasználó e-mailje"
+                    String otp "6 jegyű hitelesítő kód"
+                    Date createdAt "Létrehozva (5 percig él)"
+                }
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'dark',
+            er: {
+                diagramPadding: 20,
+                layoutDirection: 'TB',
+                minEntityWidth: 200,
+                minEntityHeight: 75,
+                entityPadding: 15,
+                stroke: 'gray',
+                fill: 'black',
+                fontSize: 12,
+            }
+        });
+    </script>
+</body>
+</html>

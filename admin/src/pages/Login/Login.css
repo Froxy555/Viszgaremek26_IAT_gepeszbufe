@@ -1,0 +1,81 @@
+.admin-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+}
+
+.admin-login-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    margin: 20px;
+    z-index: 10;
+}
+
+.admin-login-logo {
+    width: 160px;
+    margin-bottom: 25px;
+}
+
+.admin-login-container h2 {
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.admin-login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-login-container p {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.admin-login-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 15px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--input-bg);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.admin-login-container input:focus {
+    border-color: #ff4c24;
+}
+
+.admin-login-container button {
+    border: none;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff4c24, #ff9f5e);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+.admin-login-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 76, 36, 0.3);
+}
