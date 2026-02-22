@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { assets, url, currency } from '../../assets/assets';
 import notificationSound from '../../assets/notification.mp3';
+import { io } from 'socket.io-client';
 
 const formatDate = (dateString) => {
   if (!dateString) return 'Dátum nem elérhető';
@@ -44,13 +45,6 @@ const Order = () => {
       const response = await axios.get(`${url}/api/order/list`);
       if (response.data.success) {
         const newOrders = response.data.data;
-
-        // uj rendeles
-        if (isAutoRefresh && newOrders.length > previousOrdersLength.current) {
-          playNotificationSound();
-          toast.info("Új rendelés érkezett!");
-        }
-
         setOrders(newOrders);
         previousOrdersLength.current = newOrders.length;
       } else {
@@ -72,7 +66,7 @@ const Order = () => {
       });
 
       if (response.data.success) {
-        await fetchAllOrders(); 
+        await fetchAllOrders();
         toast.success("Státusz sikeresen frissítve");
       }
     } catch (error) {
@@ -82,13 +76,26 @@ const Order = () => {
   };
 
   useEffect(() => {
-    fetchAllOrders(); 
-    // auto frissites 10 mp
-    const intervalId = setInterval(() => {
-      fetchAllOrders(true);
-    }, 10000);
+    fetchAllOrders();
 
-    return () => clearInterval(intervalId);
+    // WebSocket kapcsolat inicializálása valós idejű értesítésekhez
+    const socket = io(url);
+
+    // Új rendelés érkezett
+    socket.on('newOrder', (order) => {
+      playNotificationSound();
+      toast.info("Új rendelés érkezett!");
+      fetchAllOrders(true); // Csendes háttérfrissítés
+    });
+
+    // Ha valahol (pl. másik admin gépen) módosítják a státuszt, az is frissüljön
+    socket.on('statusUpdated', (updatedOrder) => {
+      fetchAllOrders(true);
+    });
+
+    return () => {
+      socket.disconnect();
+    };
   }, []);
 
   return (
@@ -103,51 +110,96 @@ const Order = () => {
           ) : (
             orders.map((order) => (
               <div key={order._id} className='order-item'>
-                <img src={assets.parcel_icon} alt="Parcel" />
-                <div>
-                  <p className='order-item-food'>
-                    {order.items.map((item, index) => (
-                      index === order.items.length - 1
-                        ? `${item.name} x ${item.quantity}`
-                        : `${item.name} x ${item.quantity}, `
-                    ))}
-                  </p>
-                  <p><strong>Név:</strong> {order.address.firstName + " " + order.address.lastName}</p>
-                  <p><strong>Rendelés dátuma:</strong> <span className="order-item-timestamp">{formatDate(order.date)}</span></p>
-                  <p><strong>Szünet:</strong> {order.address.breakTime || "N/A"}</p>
-                  <p><strong>Telefonszám:</strong> {order.address.phone}</p>
-                  <p><strong>Rendelés kódja:</strong> <span className="order-item-code">{order.randomCode}</span></p>
-
-                  {/* megjegyzes */}
-                  {order.note && order.note !== "" && (
-                    <p className="special-request">
-                      <strong>Megjegyzés:</strong>
-                      <span className="order-item-note">{order.note}</span>
-                    </p>
+                <div className="order-item-thumb-stack">
+                  {order.items.slice(0, 3).map((item, idx) => (
+                    <img
+                      key={idx}
+                      src={item.image ? `${url}/images/${item.image}` : assets.parcel_icon}
+                      alt={item.name}
+                    />
+                  ))}
+                  {order.items.length > 3 && (
+                    <div className="order-item-thumb-more">
+                      +{order.items.length - 3}
+                    </div>
                   )}
                 </div>
-                <p>Termékek : {order.items.length}</p>
-                <p>{order.amount}{currency}</p>
-                <div className='order-status-steps'>
-                  {["Felvettük rendelésed", "Készítés alatt", "Elkészült", "Átvéve"].map((status, index) => {
-                    const currentStatusIndex = ["Felvettük rendelésed", "Készítés alatt", "Elkészült", "Átvéve"].indexOf(order.status);
-                    const isCompleted = index <= currentStatusIndex;
-                    const isNext = index === currentStatusIndex + 1;
+                <div className="order-item-main-info">
+                  <p className='order-item-food'>
+                    {order.items.map((item, index) => {
+                      const baseText = `${item.name} x ${item.quantity}`;
+                      return index === order.items.length - 1 ? baseText : baseText + ', ';
+                    })}
+                  </p>
 
-                    return (
-                      <div
-                        key={index}
-                        className={`status-step ${isCompleted ? 'completed' : ''} ${isNext ? 'next' : 'disabled'}`}
-                        onClick={(e) => isNext ? statusHandler({ target: { value: status } }, order._id) : null}
-                      >
-                        <div className={`status-icon`}>
-                          {isCompleted ? '✓' : ''}
-                        </div>
-                        <span className="status-text">{status}</span>
-                      </div>
-                    );
-                  })}
+                  <div className="order-item-tags">
+                    {order.items.some(item => item.exclusions && item.exclusions.length > 0) && (
+                      <span className="exclusion-tag">
+                        Nincs benne: {Array.from(new Set(order.items.flatMap(item => item.exclusions || []))).join(', ')}
+                      </span>
+                    )}
+                    {order.items.some(item => item.additions && item.additions.length > 0) && (
+                      <span className="addition-tag">
+                        Kér rá: {Array.from(new Set(order.items.flatMap(item => item.additions || []))).join(', ')}
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="order-item-customer-name">
+                    <span className="label">Vevő:</span> {order.address.firstName + " " + order.address.lastName}
+                  </p>
+
+                  {order.note && order.note !== "" && (
+                    <div className="order-item-note-box">
+                      <span className="label" style={{ color: "inherit" }}>Megj.:</span> <span>{order.note}</span>
+                    </div>
+                  )}
                 </div>
+
+                <div className="order-item-meta">
+                  <p>
+                    <span className="label">Szünet:</span>
+                    <span className="badge-break">{order.address.breakTime}. szünet</span>
+                  </p>
+                  <p><span className="label">Kód:</span> <span className="order-item-code">{order.randomCode}</span></p>
+                  <p><span className="label">Fizetés:</span> {order.paymentMethod ? order.paymentMethod : (order.payment ? "Stripe" : "Utánvét")}</p>
+                  <p className="order-item-date">{formatDate(order.date)}</p>
+                </div>
+
+                <div className="order-item-price-box">
+                  <p className="order-price">{order.amount}{currency}</p>
+                  <p className="order-items-count">{order.items.length} tétel</p>
+                </div>
+
+                {/* Ha le van mondva, csak egy piros taget mutatunk a folyamat helyett */}
+                {order.status === "Vásárló által lemondva" || order.status === "Törölve" ? (
+                  <div className='order-status-steps' style={{ justifyContent: 'center' }}>
+                    <div className="status-step completed" style={{ flex: 1, textAlign: 'center' }}>
+                      <span className="status-text" style={{ color: '#dc2626', fontWeight: 'bold' }}>✖ {order.status}</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className='order-status-steps'>
+                    {["Felvettük rendelésed", "Készítés alatt", "Elkészült", "Átvéve"].map((status, index) => {
+                      const currentStatusIndex = ["Felvettük rendelésed", "Készítés alatt", "Elkészült", "Átvéve"].indexOf(order.status);
+                      const isCompleted = index <= currentStatusIndex;
+                      const isNext = index === currentStatusIndex + 1;
+
+                      return (
+                        <div
+                          key={index}
+                          className={`status-step ${isCompleted ? 'completed' : ''} ${isNext ? 'next' : 'disabled'}`}
+                          onClick={(e) => isNext ? statusHandler({ target: { value: status } }, order._id) : null}
+                        >
+                          <div className={`status-icon`}>
+                            {isCompleted ? '✓' : ''}
+                          </div>
+                          <span className="status-text">{status}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             ))
           )}
