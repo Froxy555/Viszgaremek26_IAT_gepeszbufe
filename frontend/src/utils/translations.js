@@ -11,7 +11,7 @@ export const translations = {
 
         // Explore
         "explore.title": "Fedezd fel választékainkat",
-        "explore.desc": "Válassz egy vagy több ételt a menünkből, rendeld meg online és már szállítjuk is hozzád 😊",
+        "explore.desc": "Válassz egy vagy több ételt a menünkből, rendeld meg online és vedd át a büfében! 😊",
 
         // Food Display
         "food.title": "Menü",
@@ -52,7 +52,7 @@ export const translations = {
 
         // Explore
         "explore.title": "Explore Our Menu",
-        "explore.desc": "Choose your favorite meals from the menu, order online, and we'll deliver it right to you 😊",
+        "explore.desc": "Choose your favorite meals from the menu, order online, and pick it up at the buffet! 😊",
 
         // Food Display
         "food.title": "Menu",

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './FoodItem.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../Context/StoreContext';
@@ -14,9 +14,15 @@ const FoodItem = ({ image, name, price, desc, id, available = true, rating = 5 }
         currency = ''
     } = context;
 
+    const [isAnimating, setIsAnimating] = useState(false);
+
     // Kosárba tétel kezelése
     const handleAddToCart = () => {
         addToCart(id);
+
+        // Animáció elindítása
+        setIsAnimating(true);
+        setTimeout(() => setIsAnimating(false), 300);
     };
 
     // Kosárból eltávolítás kezelése
@@ -49,22 +55,11 @@ const FoodItem = ({ image, name, price, desc, id, available = true, rating = 5 }
             <div className='food-item-img-container'>
                 <img className={`food-item-image ${!available ? 'grayscale' : ''}`} src={url + "/images/" + image} alt="" />
 
-                {!available ? (
+                {!available && (
                     // Elfogyott jelzés
                     <div className="sold-out-overlay">
                         <p>Elfogyott</p>
                     </div>
-                ) : (
-                    // Kosár gombok (Hozzáadás vagy Számláló)
-                    !getCartCount()
-                        ? <div className='food-item-add' onClick={handleAddToCart}>
-                            <span>+</span>
-                        </div>
-                        : <div className="food-item-counter-modern">
-                            <div className="counter-btn minus" onClick={handleRemoveFromCart}>-</div>
-                            <p>{getCartCount()}</p>
-                            <div className="counter-btn plus" onClick={handleAddToCart}>+</div>
-                        </div>
                 )}
             </div>
 
@@ -77,7 +72,21 @@ const FoodItem = ({ image, name, price, desc, id, available = true, rating = 5 }
                     </div>
                 </div>
                 <p className="food-item-desc">{desc}</p>
-                <p className="food-item-price">{price}{currency}</p>
+                <div className="food-item-price-row">
+                    <p className="food-item-price-bottom">{price}{currency}</p>
+
+                    {available && (
+                        !getCartCount()
+                            ? <div className={`food-item-add ${isAnimating ? 'pop-anim' : ''}`} onClick={handleAddToCart}>
+                                <span>+</span>
+                            </div>
+                            : <div className={`food-item-counter-modern ${isAnimating ? 'pop-anim' : ''}`}>
+                                <div className="counter-btn minus" onClick={handleRemoveFromCart}>-</div>
+                                <p>{getCartCount()}</p>
+                                <div className="counter-btn plus" onClick={handleAddToCart}>+</div>
+                            </div>
+                    )}
+                </div>
             </div>
         </div>
     )

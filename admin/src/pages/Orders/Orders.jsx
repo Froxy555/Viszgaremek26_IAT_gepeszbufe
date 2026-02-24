@@ -31,6 +31,7 @@ const formatDate = (dateString) => {
 
 const Order = () => {
   const [orders, setOrders] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const previousOrdersLength = React.useRef(0);
 
@@ -98,17 +99,34 @@ const Order = () => {
     };
   }, []);
 
+  const filteredOrders = orders.filter(order => {
+    if (!searchTerm) return true;
+    return order.randomCode && order.randomCode.toString().includes(searchTerm);
+  });
+
   return (
     <div className='order add'>
-      <h3>Rendelések</h3>
+      <div className="orders-header">
+        <h3>Rendelések</h3>
+        <div className="order-search-container">
+          <input
+            type="text"
+            placeholder="🔍 Átvételi kód"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="order-search-input"
+            maxLength={4}
+          />
+        </div>
+      </div>
       {loading ? (
         <div className="loading">Rendelések betöltése...</div>
       ) : (
         <div className="order-list">
-          {orders.length === 0 ? (
-            <div className="no-orders">Nincs aktív rendelés</div>
+          {filteredOrders.length === 0 ? (
+            <div className="no-orders">{searchTerm ? "Nincs találat erre a kódra" : "Nincs aktív rendelés"}</div>
           ) : (
-            orders.map((order) => (
+            filteredOrders.map((order) => (
               <div key={order._id} className='order-item'>
                 <div className="order-item-thumb-stack">
                   {order.items.slice(0, 3).map((item, idx) => (

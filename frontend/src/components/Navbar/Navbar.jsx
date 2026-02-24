@@ -10,6 +10,10 @@ const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const { getTotalCartAmount, token, setToken, setSearchTerm, profileAvatar, t } = useContext(StoreContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -149,6 +153,36 @@ const Navbar = ({ setShowLogin }) => {
     };
   }, [showProfileMenu]);
 
+  // Scroll logika: eltűnik ha lefelé görgetünk, megjelenik ha felfelé
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Scrolled effekt ha nem a legtetején vagyunk
+      if (currentScrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      // Navbar elrejtése/megjelenítése
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Lefelé görgetünk (eltüntetjük a navbart, összecsukjuk a menüket)
+        setShowNavbar(false);
+        setIsMobileMenuOpen(false);
+        setShowProfileMenu(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Felfelé görgetünk (visszahozzuk)
+        setShowNavbar(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   // Aktív menüpont beállítása az URL alapján
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -173,7 +207,7 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <>
-      <div className={`navbar ${isMobileMenuOpen ? 'navbar-open' : ''}`}>
+      <div className={`navbar ${isMobileMenuOpen ? 'navbar-open' : ''} ${!showNavbar ? 'navbar-hidden' : ''} ${isScrolled ? 'navbar-scrolled' : ''}`}>
         <Link to='/' onClick={() => { setMenu("home"); setIsMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <img className='logo' src={assets.logo} alt="Grillo Logo" />
         </Link>

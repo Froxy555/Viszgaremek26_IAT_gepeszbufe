@@ -13,6 +13,42 @@
     border-radius: 12px;
 }
 
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.order-search-container {
+    display: flex;
+    align-items: center;
+}
+
+.order-search-input {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 15px;
+    width: 180px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-search-input:focus {
+    border-color: #ff4c24;
+    box-shadow: 0 4px 12px rgba(255, 76, 36, 0.15);
+}
+
+.order-search-input::placeholder {
+    color: #999;
+}
+
 .order-item-food {
     font-weight: 600;
     font-size: 15px;
