@@ -12,7 +12,7 @@
 
 ## 📖 A projektről
 
-A **GépészBüfé** egy robusztus, webes alapon működő ételrendelő platform, amely kifejezetten az iskolai logisztika és az intézményi étkeztetés gyorsítására épült. A rendszer fő célja, hogy megoldja a korlátozott idejű iskolai szünetekben kialakuló sorban állás és készpénzes tranzakciók okozta torlódásokat. 
+A **GépészBüfé** egy webes alapon működő ételrendelő platform, amely kifejezetten az iskolai logisztika és az intézményi étkeztetés gyorsítására épült. A rendszer fő célja, hogy megoldja a korlátozott idejű iskolai szünetekben kialakuló sorban állás és készpénzes tranzakciók okozta torlódásokat. 
 
 A projekt három fő pilléren nyugszik:
 1. Egy gyors és letisztult **Vásárlói Felület** a diákok és tanárok számára.
