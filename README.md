@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="./Dokumentaciok/bemutato_kep.png" alt="A GépészBüfé Főoldala" style="max-width: 100%; border-radius: 12px; margin-bottom: 20px;">
+  
   <h1>🍔 GépészBüfé</h1>
   <p><b>Modern, MERN-stack alapú iskolai büfé előrendelő rendszer (Vizsgaremek projekt)</b></p>
   
@@ -108,3 +110,4 @@ npm run dev
 ```
 
 Miután mindegyik sikeresen elindult, a böngészőből elérhető az alkalmazás a terminálok által megadott címein (jellemzően `http://localhost:5173` és `5174`).
+
