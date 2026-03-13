@@ -1,5 +1,5 @@
 import express from 'express';
-import { loginUser, registerUser, getProfile, updateProfile, listUsers, sendOtp, googleLogin, deleteUser, sendPasswordResetOtp, resetPassword } from '../controllers/userController.js';
+import { loginUser, registerUser, getProfile, updateProfile, listUsers, sendOtp, googleLogin, deleteUser, sendPasswordResetOtp, resetPassword, requestAdminAccess } from '../controllers/userController.js';
 import authMiddleware from '../middleware/auth.js';
 const userRouter = express.Router();
 
@@ -18,6 +18,9 @@ userRouter.post("/login", loginUser);
 // elfelejtett jelszó
 userRouter.post("/forgot-password", sendPasswordResetOtp);
 userRouter.post("/reset-password", resetPassword);
+
+// admin hozzáférés kérése
+userRouter.post("/request-admin-access", requestAdminAccess);
 
 // profil adatok lekérése
 userRouter.get("/profile", authMiddleware, getProfile);

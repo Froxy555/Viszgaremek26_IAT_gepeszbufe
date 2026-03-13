@@ -398,4 +398,45 @@ const deleteUser = async (req, res) => {
     }
 }
 
-export { loginUser, registerUser, getProfile, updateProfile, listUsers, sendOtp, googleLogin, deleteUser, sendPasswordResetOtp, resetPassword }
+// admin hozzáférés kérése
+const requestAdminAccess = async (req, res) => {
+    const { name, email } = req.body;
+    try {
+        if (!name || !email) {
+            return res.json({ success: false, message: "Kérlek add meg a neved és az emailedet!" });
+        }
+
+        if (!validator.isEmail(email)) {
+            return res.json({ success: false, message: "Érvénytelen email cím" });
+        }
+
+        if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS
+                }
+            });
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: "hevesitamas7@gmail.com",
+                subject: 'GépészBüfé - Admin Hozzáférés Kérelem',
+                text: `Új admin hozzáférés kérelem érkezett.\n\nNév: ${name}\nEmail: ${email}\n\nHa jóváhagyod, küldd el neki a PIN kódot erre az email címre.`
+            };
+            await transporter.sendMail(mailOptions);
+            res.json({ success: true, message: "Kérelem sikeresen elküldve!" });
+        } else {
+            console.log("------------------------");
+            console.log("NINCS BEÁLLÍTVA AZ EMAIL SYSTEM KÉRELEMHEZ");
+            console.log(`Kérelem: Név: ${name}, Email: ${email}`);
+            console.log("------------------------");
+            res.json({ success: true, message: "Kérelem elküldve (szimulálva)!" });
+        }
+    } catch (err) {
+        console.log(err);
+        res.json({ success: false, message: "Hiba történt a kérelem elküldésekor" });
+    }
+}
+
+export { loginUser, registerUser, getProfile, updateProfile, listUsers, sendOtp, googleLogin, deleteUser, sendPasswordResetOtp, resetPassword, requestAdminAccess }
