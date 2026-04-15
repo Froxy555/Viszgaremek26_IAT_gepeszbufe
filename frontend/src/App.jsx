@@ -14,6 +14,7 @@ import Settings from './pages/Settings/Settings'
 import OrderSuccess from './pages/OrderSuccess/OrderSuccess'
 import CartSidebar from './components/CartSidebar/CartSidebar'
 import MobileCartButton from './components/MobileCartButton/MobileCartButton'
+import Documentation from './pages/Documentation/Documentation'
 import Chatbot from './components/Chatbot/Chatbot'
 import { StoreContext } from './Context/StoreContext'
 import { io } from 'socket.io-client'
@@ -75,6 +76,7 @@ const App = () => {
     location.pathname === '/cart' ||
     location.pathname === '/myorders' ||
     location.pathname === '/order' ||
+    location.pathname === '/dokumentacio' ||
     location.pathname.startsWith('/order-success');
 
   return (
@@ -94,6 +96,7 @@ const App = () => {
           <Route path='/myorders' element={<MyOrders />} />
           <Route path='/settings' element={<Settings />} />
           <Route path='/verify' element={<Verify />} />
+          <Route path='/dokumentacio' element={<Documentation />} />
         </Routes>
         {!hideFooter && <Footer />}
       </div>

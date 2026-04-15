@@ -279,9 +279,9 @@ const Navbar = ({ setShowLogin }) => {
             {getTotalCartAmount() > 0 && <div className="dot"></div>}
           </Link>
 
-          <a href="https://github.com/Froxy555/Viszgaremek26_IAT_gepeszbufe.git" target="_blank" rel="noopener noreferrer" className="navbar-doc-button">
+          <Link to="/dokumentacio" className="navbar-doc-button">
             Dokumentáció
-          </a>
+          </Link>
 
           {!token ? (
             <button className="navbar-login-button" onClick={() => setShowLogin(true)}>{t('nav.login')}</button>

@@ -1,0 +1,3484 @@
+[{
+  "_id": {
+    "$oid": "6921e54a88ee4f0f74ade7f4"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 1500,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Kiss",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T16:31:06.678Z"
+  },
+  "payment": true,
+  "randomCode": "7831",
+  "createdAt": {
+    "$date": "2025-11-22T16:31:06.686Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-22T16:31:06.686Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6921e73088ee4f0f74ade7fd"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 2
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Kiss",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "2",
+    "phone": "+36 20 368 7751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T16:39:12.595Z"
+  },
+  "payment": true,
+  "randomCode": "7051",
+  "createdAt": {
+    "$date": "2025-11-22T16:39:12.597Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-22T16:39:12.597Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69222cbb364e4719277b7b42"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 960,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Tamas",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Elkészült",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T21:35:55.321Z"
+  },
+  "payment": true,
+  "randomCode": "8306",
+  "createdAt": {
+    "$date": "2025-11-22T21:35:55.327Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-27T15:35:38.195Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6922239588ee4f0f74ade804"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Tamas",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "1",
+    "phone": "06203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T20:56:53.937Z"
+  },
+  "payment": true,
+  "randomCode": "2052",
+  "createdAt": {
+    "$date": "2025-11-22T20:56:53.940Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-22T20:56:53.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69222cb6364e4719277b7b3a"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 960,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Tamas",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T21:35:50.358Z"
+  },
+  "payment": false,
+  "randomCode": "2867",
+  "createdAt": {
+    "$date": "2025-11-22T21:35:50.361Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-22T21:35:50.361Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "692225218721a7342f31afaf"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 2
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Kiss",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "1",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T21:03:29.608Z"
+  },
+  "payment": true,
+  "randomCode": "5255",
+  "createdAt": {
+    "$date": "2025-11-22T21:03:29.625Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-22T21:03:29.625Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "692224ab88ee4f0f74ade822"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 2
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "asd",
+    "lastName": "Kiss",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "1",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T21:01:31.607Z"
+  },
+  "payment": true,
+  "randomCode": "8203",
+  "createdAt": {
+    "$date": "2025-11-22T21:01:31.611Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-22T21:01:31.611Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69222cb8364e4719277b7b3e"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 960,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Tamas",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2025-11-22",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2025-11-22T21:35:52.652Z"
+  },
+  "payment": false,
+  "randomCode": "2332",
+  "createdAt": {
+    "$date": "2025-11-22T21:35:52.653Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-22T21:35:52.653Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69209b66cf8f8ff6ba9d8e88"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Kiss",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "02.11",
+    "breakTime": "3",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2025-11-21T17:03:34.608Z"
+  },
+  "payment": true,
+  "randomCode": "4063",
+  "createdAt": {
+    "$date": "2025-11-21T17:03:34.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-21T17:03:34.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d7c8a965d94a6a6ad4618"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 1460,
+  "address": {
+    "firstName": "kjsbewqerqwr",
+    "lastName": "qrq",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "1",
+    "phone": "203687766"
+  },
+  "status": "Készítés alatt",
+  "note": "hambiba nem kérek hust",
+  "date": {
+    "$date": "2026-02-12T07:08:58.663Z"
+  },
+  "payment": true,
+  "randomCode": "1325",
+  "createdAt": {
+    "$date": "2026-02-12T07:08:58.667Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T07:09:17.498Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698d8ef21c0329825ff8482f"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 2
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 2460,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "fasz@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "2",
+    "phone": "+36202002000"
+  },
+  "status": "Elkészült",
+  "note": "nem kerek ubit",
+  "date": {
+    "$date": "2026-02-12T08:27:30.337Z"
+  },
+  "payment": true,
+  "randomCode": "5565",
+  "createdAt": {
+    "$date": "2026-02-12T08:27:30.377Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T08:29:03.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698dabf023fd6ba5575e1fe8"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 4
+    },
+    {
+      "_id": "698dab5323fd6ba5575e1fc4",
+      "name": "Joci IStván",
+      "description": "István ital",
+      "price": -800,
+      "image": "1770892115090feladat.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 6
+    }
+  ],
+  "amount": -1460,
+  "address": {
+    "firstName": "asd",
+    "lastName": "Joci",
+    "email": "istvanjozseflakatos@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "1",
+    "phone": "fdsf32e2"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "joci hozza ki",
+  "date": {
+    "$date": "2026-02-12T10:31:12.088Z"
+  },
+  "payment": true,
+  "randomCode": "8246",
+  "createdAt": {
+    "$date": "2026-02-12T10:31:12.093Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T10:31:45.752Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698daf9b23fd6ba5575e200f"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 960,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "asd@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "6",
+    "phone": "sadsa"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T10:46:51.597Z"
+  },
+  "payment": true,
+  "randomCode": "7314",
+  "createdAt": {
+    "$date": "2026-02-12T10:46:51.599Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T10:46:51.599Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ded1ce967fb36bea798d1"
+  },
+  "userId": "guest_1770908956032",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 1460,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Kiss",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "3",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T15:09:16.181Z"
+  },
+  "payment": true,
+  "randomCode": "8619",
+  "createdAt": {
+    "$date": "2026-02-12T15:09:16.215Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T15:09:16.215Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ded5ce967fb36bea798d9"
+  },
+  "userId": "guest_1770909020298",
+  "items": [
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 2
+    }
+  ],
+  "amount": 920,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Tamas",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T15:10:20.310Z"
+  },
+  "payment": true,
+  "randomCode": "1638",
+  "createdAt": {
+    "$date": "2026-02-12T15:10:20.312Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T15:10:20.312Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698dedcbe967fb36bea798e0"
+  },
+  "userId": "guest_1770909131593",
+  "items": [
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "quantity": 2
+    }
+  ],
+  "amount": 920,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Kiss",
+    "email": "tkiss693@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T15:12:11.608Z"
+  },
+  "payment": true,
+  "randomCode": "8696",
+  "createdAt": {
+    "$date": "2026-02-12T15:12:11.612Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T20:17:01.092Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698deeaee967fb36bea798e7"
+  },
+  "userId": "guest_1770909358502",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 1500,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "hevesitamas7@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Elkészült",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T15:15:58.519Z"
+  },
+  "payment": true,
+  "randomCode": "9126",
+  "createdAt": {
+    "$date": "2026-02-12T15:15:58.523Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T15:16:05.819Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698defad84f13df7c8382041"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 2
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "7",
+    "phone": "+36203687751"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T15:20:13.469Z"
+  },
+  "payment": true,
+  "randomCode": "5074",
+  "createdAt": {
+    "$date": "2026-02-12T15:20:13.507Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T20:17:03.028Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e32b166ebea728687aa47"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "available": true,
+      "rating": 4,
+      "quantity": 1
+    }
+  ],
+  "amount": 1460,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Átvéve",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T20:06:09.883Z"
+  },
+  "payment": true,
+  "randomCode": "5809",
+  "createdAt": {
+    "$date": "2026-02-12T20:06:09.895Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T20:11:19.928Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698e609d27178ccbad9932ea"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "rating": 5,
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1770914112371menu_4.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 500,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-12",
+    "breakTime": "3",
+    "phone": "+36203687751"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-12T23:22:05.278Z"
+  },
+  "payment": true,
+  "randomCode": "5810",
+  "createdAt": {
+    "$date": "2026-02-12T23:22:05.285Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-12T23:22:19.978Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ee27d4760c38fd5de792b"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1763846382251pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "available": true,
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "rating": 5,
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1770914112371menu_4.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "698ee21b4760c38fd5de7911",
+      "name": "Mongol",
+      "description": "Attila",
+      "price": 100,
+      "image": "1770971697628feladat2.jpg",
+      "category": "Hamburger",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 2560,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-13",
+    "breakTime": "3",
+    "phone": "+36203687751"
+  },
+  "status": "Átvéve",
+  "note": "",
+  "date": {
+    "$date": "2026-02-13T08:36:13.090Z"
+  },
+  "payment": true,
+  "randomCode": "7281",
+  "createdAt": {
+    "$date": "2026-02-13T08:36:13.093Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T08:37:21.427Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698ee2f14760c38fd5de794d"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 500,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-13",
+    "breakTime": "3",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-13T08:38:09.000Z"
+  },
+  "payment": true,
+  "randomCode": "8229",
+  "createdAt": {
+    "$date": "2026-02-13T08:38:09.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T08:38:09.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698fae08d6ce355c72863cb6"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 2
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-13",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-13T23:04:40.584Z"
+  },
+  "payment": false,
+  "randomCode": "8713",
+  "createdAt": {
+    "$date": "2026-02-13T23:04:40.596Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T23:04:40.596Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698fae21d6ce355c72863cc0"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 500,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-13",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-13T23:05:05.435Z"
+  },
+  "payment": false,
+  "randomCode": "5482",
+  "createdAt": {
+    "$date": "2026-02-13T23:05:05.436Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T23:05:05.436Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698fae31d6ce355c72863cca"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-13",
+    "breakTime": "3",
+    "phone": "+36203687751"
+  },
+  "status": "Elkészült",
+  "note": "",
+  "date": {
+    "$date": "2026-02-13T23:05:21.571Z"
+  },
+  "payment": false,
+  "randomCode": "9992",
+  "createdAt": {
+    "$date": "2026-02-13T23:05:21.572Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-13T23:07:02.983Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69933b0348dbd7e5707875e7"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1763740403530pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "quantity": 2
+    },
+    {
+      "available": true,
+      "rating": 5,
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1763735440441menu_1.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "Tamás",
+    "lastName": "Hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-16",
+    "breakTime": "7",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-16T15:42:59.483Z"
+  },
+  "payment": true,
+  "randomCode": "1069",
+  "createdAt": {
+    "$date": "2026-02-16T15:42:59.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-16T15:42:59.492Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998c866c2c0568a0501ef69"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771620008772hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 2
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "1",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T20:47:34.166Z"
+  },
+  "payment": true,
+  "randomCode": "9045",
+  "createdAt": {
+    "$date": "2026-02-20T20:47:34.167Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T20:47:34.167Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998c89b577242c2a32633ca"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1771619988508pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "available": true,
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771620008772hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1
+    }
+  ],
+  "amount": 1460,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T20:48:27.507Z"
+  },
+  "payment": true,
+  "randomCode": "2824",
+  "createdAt": {
+    "$date": "2026-02-20T20:48:27.517Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T20:48:27.517Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998c907577242c2a32633d5"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771620019398piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 2
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "1",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T20:50:15.822Z"
+  },
+  "payment": true,
+  "randomCode": "8819",
+  "createdAt": {
+    "$date": "2026-02-20T20:50:15.823Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T20:50:15.823Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998cb1f24ecc1338e95c9a3"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771620002508pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 2
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T20:59:11.168Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3888",
+  "createdAt": {
+    "$date": "2026-02-20T20:59:11.179Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T20:59:11.179Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998d01841ef0729e4d209cc"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771620002508pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 2
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "1",
+    "phone": "+36203687751"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T21:20:24.237Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "1395",
+  "createdAt": {
+    "$date": "2026-02-20T21:20:24.247Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T21:20:45.996Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998d176359682d1ba3af4f1"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1771619988508pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "available": true,
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771620008772hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1
+    }
+  ],
+  "amount": 1460,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Vásárló által lemondva",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T21:26:14.765Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "1097",
+  "createdAt": {
+    "$date": "2026-02-20T21:26:14.779Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T21:26:34.718Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998d1ad359682d1ba3af509"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1771619988508pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "available": true,
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771620019398piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 1
+    }
+  ],
+  "amount": 960,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T21:27:09.904Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "5024",
+  "createdAt": {
+    "$date": "2026-02-20T21:27:09.905Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T21:27:09.905Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998d2a5b079f354f9e01c51"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771620002508pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1
+    },
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771620019398piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 1
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "7",
+    "phone": "+36203687751"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T21:31:17.422Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "8116",
+  "createdAt": {
+    "$date": "2026-02-20T21:31:17.431Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T21:31:35.350Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998d4aed4a5682910744958"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1771619988508pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "available": true,
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771620008772hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1
+    }
+  ],
+  "amount": 1460,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Vásárló által lemondva",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T21:39:58.545Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "8985",
+  "createdAt": {
+    "$date": "2026-02-20T21:39:58.569Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T21:40:05.718Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998d4ced4a568291074496a"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771620002508pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1
+    },
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771620019398piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 1
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Vásárló által lemondva",
+  "note": "Lemondás oka: asd",
+  "date": {
+    "$date": "2026-02-20T21:40:30.186Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3080",
+  "createdAt": {
+    "$date": "2026-02-20T21:40:30.187Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-20T21:40:54.131Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6998dd3131372ffa986a7016"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "692228ee8721a7342f31afbd",
+      "name": "Pepsi",
+      "description": "cola",
+      "price": 460,
+      "image": "1771619988508pepsi.png",
+      "category": "Italok",
+      "__v": 0,
+      "available": true,
+      "rating": 4,
+      "quantity": 1
+    }
+  ],
+  "amount": 460,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-20",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Elkészült",
+  "note": "",
+  "date": {
+    "$date": "2026-02-20T22:16:17.381Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3561",
+  "createdAt": {
+    "$date": "2026-02-20T22:16:17.390Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T10:24:58.651Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6999962262c41fb82397a895"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771668311057pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1
+    }
+  ],
+  "amount": 500,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T11:25:22.025Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "9716",
+  "createdAt": {
+    "$date": "2026-02-21T11:25:22.028Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T11:25:22.028Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6999c0c28890198948bb559a"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "699986eb62c41fb82397a83e",
+      "name": "Xixo",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669227830xixo.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1
+    },
+    {
+      "_id": "6999876262c41fb82397a84a",
+      "name": "Mountain Dew",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669890183mountain.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1
+    }
+  ],
+  "amount": 900,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T14:27:14.398Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "1509",
+  "createdAt": {
+    "$date": "2026-02-21T14:27:14.411Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T14:27:14.411Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6999c3898890198948bb55c2"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771669284894piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 2
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "7",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T14:39:05.280Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "2323",
+  "createdAt": {
+    "$date": "2026-02-21T14:39:05.281Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T14:39:05.281Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6999f88d33f5a065a5413e82"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [
+        "Hagyma",
+        "Sajt",
+        "Mustár"
+      ]
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T18:25:17.241Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3930",
+  "createdAt": {
+    "$date": "2026-02-21T18:25:17.251Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T18:25:17.251Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6999fcc533f5a065a5413ee2"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771668311057pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": [
+        "Tartár",
+        "Ketchup"
+      ]
+    }
+  ],
+  "amount": 500,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T18:43:17.060Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "9621",
+  "createdAt": {
+    "$date": "2026-02-21T18:43:17.061Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T18:43:17.061Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699a286533f5a065a5413fc7"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771668311057pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": [
+        "Ketchup"
+      ]
+    },
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [
+        "Saláta"
+      ],
+      "additions": []
+    },
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [
+        "Csípős"
+      ],
+      "additions": []
+    }
+  ],
+  "amount": 2500,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T21:49:25.195Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3628",
+  "createdAt": {
+    "$date": "2026-02-21T21:49:25.196Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T21:49:53.170Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699a28a833f5a065a5413fdd"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [
+        "Csípős"
+      ],
+      "additions": []
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "3",
+    "phone": "+36203687751"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T21:50:32.958Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "9297",
+  "createdAt": {
+    "$date": "2026-02-21T21:50:32.959Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T21:50:32.959Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699a2985dd350d45cb17e0d0"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "6999876262c41fb82397a84a",
+      "name": "Mountain Dew",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669890183mountain.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1450,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamas",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-21",
+    "breakTime": "2",
+    "phone": "+36203687751"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-21T21:54:13.418Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "6381",
+  "createdAt": {
+    "$date": "2026-02-21T21:54:13.427Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-21T21:54:26.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699b2d9097a2923334d7ff03"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771668311057pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 2,
+      "exclusions": [],
+      "additions": [
+        "Ketchup"
+      ]
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-22",
+    "breakTime": "2",
+    "phone": "qwqwe"
+  },
+  "status": "Vásárló által lemondva",
+  "note": "",
+  "date": {
+    "$date": "2026-02-22T16:23:44.944Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "1623",
+  "createdAt": {
+    "$date": "2026-02-22T16:23:44.951Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-24T06:54:17.729Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699b35e05764218001ee8f86"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771668311057pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": [
+        "Ketchup"
+      ]
+    },
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771669284894piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [
+        "Paradicsom"
+      ],
+      "additions": []
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-22",
+    "breakTime": "2",
+    "phone": "qwqwe"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-22T16:59:12.216Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "7870",
+  "createdAt": {
+    "$date": "2026-02-22T16:59:12.219Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-22T17:01:07.718Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699b362e5764218001ee8f93"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [
+        "Paradicsom"
+      ],
+      "additions": []
+    },
+    {
+      "_id": "699989a862c41fb82397a87a",
+      "name": "Pepsi",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669928002pepsi.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1450,
+  "address": {
+    "firstName": "tamas",
+    "lastName": "hevesi",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-22",
+    "breakTime": "2",
+    "phone": "qwqwe"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-22T17:00:30.670Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "9424",
+  "createdAt": {
+    "$date": "2026-02-22T17:00:30.671Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-22T17:01:05.058Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699b389d60cbbe4786795064"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "699986eb62c41fb82397a83e",
+      "name": "Xixo",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669227830xixo.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "6999876262c41fb82397a84a",
+      "name": "Mountain Dew",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669890183mountain.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 900,
+  "address": {
+    "firstName": "tamas",
+    "lastName": "hevesi",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-22",
+    "breakTime": "2",
+    "phone": "qwqwe"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-22T17:10:53.893Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "9620",
+  "createdAt": {
+    "$date": "2026-02-22T17:10:53.901Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-22T17:10:53.901Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699c0cb587822bbcf2eaf5be"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771669284894piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 2,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699989a862c41fb82397a87a",
+      "name": "Pepsi",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669928002pepsi.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1450,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamás",
+    "email": "hevesitamas7@gmail.com",
+    "orderDate": "2026-02-23",
+    "breakTime": "1",
+    "phone": "06203687750"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-23T08:15:49.636Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "2849",
+  "createdAt": {
+    "$date": "2026-02-23T08:15:49.642Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-23T08:15:49.642Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699c32f13608270e119be35a"
+  },
+  "userId": "guest_1771844335810",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771669284894piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 2500,
+  "address": {
+    "firstName": "cfhgdfh",
+    "lastName": "vnvbnv",
+    "email": "vbnvbn@fdgdfg.com",
+    "orderDate": "2026-02-23",
+    "breakTime": "4",
+    "phone": "wefgsdrgf"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-23T10:58:57.226Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "2806",
+  "createdAt": {
+    "$date": "2026-02-23T10:58:57.233Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-24T06:52:45.577Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699e01ae9de1c7ebc79f9380"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [
+        "Hagyma"
+      ],
+      "additions": []
+    },
+    {
+      "_id": "699986eb62c41fb82397a83e",
+      "name": "Xixo",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669227830xixo.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1450,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-24",
+    "breakTime": "1",
+    "phone": "20756473920"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-24T19:53:18.445Z"
+  },
+  "payment": false,
+  "paymentMethod": "Stripe",
+  "randomCode": "6344",
+  "createdAt": {
+    "$date": "2026-02-24T19:53:18.452Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-24T19:53:18.452Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699e01d29de1c7ebc79f938a"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [
+        "Csípős"
+      ],
+      "additions": []
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-24",
+    "breakTime": "2",
+    "phone": "20756473920"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-24T19:53:54.102Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "9163",
+  "createdAt": {
+    "$date": "2026-02-24T19:53:54.103Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-24T19:54:06.338Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699e036e9de1c7ebc79f93a1"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "6999876262c41fb82397a84a",
+      "name": "Mountain Dew",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669890183mountain.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 2,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 900,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-24",
+    "breakTime": "4",
+    "phone": "20756473920"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-24T20:00:46.512Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "8908",
+  "createdAt": {
+    "$date": "2026-02-24T20:00:46.513Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-24T20:00:46.513Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699e03709de1c7ebc79f93a6"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "6999876262c41fb82397a84a",
+      "name": "Mountain Dew",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669890183mountain.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 2,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 900,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-24",
+    "breakTime": "4",
+    "phone": "20756473920"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-24T20:00:48.557Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "9335",
+  "createdAt": {
+    "$date": "2026-02-24T20:00:48.558Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-24T20:00:48.558Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f3ea63c3b975f7d6f6f45"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699989a862c41fb82397a87a",
+      "name": "Pepsi",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669928002pepsi.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 2450,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamás",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-25",
+    "breakTime": "2",
+    "phone": "06203687750"
+  },
+  "status": "Átvéve",
+  "note": "",
+  "date": {
+    "$date": "2026-02-25T18:25:42.394Z"
+  },
+  "payment": true,
+  "paymentMethod": "Utánvét",
+  "randomCode": "1178",
+  "createdAt": {
+    "$date": "2026-02-25T18:25:42.403Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-25T22:00:35.293Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699f5472382dcb3173997da7"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699989a862c41fb82397a87a",
+      "name": "Pepsi",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669928002pepsi.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1450,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamás",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-02-25",
+    "breakTime": "3",
+    "phone": "06203687750"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-02-25T19:58:42.025Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3596",
+  "createdAt": {
+    "$date": "2026-02-25T19:58:42.038Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-25T22:00:36.610Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a02d4e68687c0863f53b5c"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [
+        "Ketchup"
+      ],
+      "additions": []
+    },
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771668311057pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": [
+        "Ketchup"
+      ]
+    },
+    {
+      "_id": "699986a762c41fb82397a839",
+      "name": "Coca cola",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669159071coca.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1950,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-02-26",
+    "breakTime": "2",
+    "phone": "20756473920"
+  },
+  "status": "Készítés alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-02-26T11:23:58.170Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "2744",
+  "createdAt": {
+    "$date": "2026-02-26T11:23:58.177Z"
+  },
+  "updatedAt": {
+    "$date": "2026-02-26T12:16:35.163Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2bbb910b4fcbe79dc964b"
+  },
+  "userId": "guest_1772272569504",
+  "items": [
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771669284894piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 2,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699986eb62c41fb82397a83e",
+      "name": "Xixo",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669227830xixo.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1450,
+  "address": {
+    "firstName": "trz",
+    "lastName": "rtz",
+    "email": "sdfjsdjfjsd@gmail.com",
+    "orderDate": "2026-02-28",
+    "breakTime": "2",
+    "phone": "3424234"
+  },
+  "status": "Vásárló által lemondva",
+  "note": "",
+  "date": {
+    "$date": "2026-02-28T09:56:09.509Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3282",
+  "createdAt": {
+    "$date": "2026-02-28T09:56:09.511Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T12:20:00.495Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a2bbed10b4fcbe79dc9652"
+  },
+  "userId": "guest_1772272621608",
+  "items": [
+    {
+      "_id": "699986eb62c41fb82397a83e",
+      "name": "Xixo",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669227830xixo.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 2,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 900,
+  "address": {
+    "firstName": "trz",
+    "lastName": "rtz",
+    "email": "sdfjsdjfjsd@gmail.com",
+    "orderDate": "2026-02-28",
+    "breakTime": "4",
+    "phone": "3424234"
+  },
+  "status": "Vásárló által lemondva",
+  "note": "",
+  "date": {
+    "$date": "2026-02-28T09:57:01.611Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3175",
+  "createdAt": {
+    "$date": "2026-02-28T09:57:01.612Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T12:19:58.212Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a69a1ac94c54aa84acd2ec"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "699989a862c41fb82397a87a",
+      "name": "Pepsi",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669928002pepsi.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 450,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamás",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-03-03",
+    "breakTime": "2",
+    "phone": "06203687750"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-03-03T08:21:46.611Z"
+  },
+  "payment": true,
+  "paymentMethod": "Stripe",
+  "randomCode": "7556",
+  "createdAt": {
+    "$date": "2026-03-03T08:21:46.612Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-03T08:22:59.910Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a928634f755221b43dd2b1"
+  },
+  "userId": "6998c4d4c2c0568a0501ef47",
+  "items": [
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [
+        "Hagyma"
+      ],
+      "additions": []
+    },
+    {
+      "_id": "699986eb62c41fb82397a83e",
+      "name": "Xixo",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669227830xixo.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1450,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamás",
+    "email": "tamashevesi4@gmail.com",
+    "orderDate": "2026-03-05",
+    "breakTime": "3",
+    "phone": "06201234567"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-03-05T06:53:23.913Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "7853",
+  "createdAt": {
+    "$date": "2026-03-05T06:53:23.921Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-05T06:53:23.921Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a94402c1d1781ecfd24017"
+  },
+  "userId": "692076f9cf8f8ff6ba9d8e51",
+  "items": [
+    {
+      "_id": "698e0140b7162993ef3871bc",
+      "name": "Piritós",
+      "description": "finom francia",
+      "price": 500,
+      "image": "1771669284894piritos.png",
+      "category": "Piritos",
+      "available": true,
+      "__v": 0,
+      "rating": 5,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    },
+    {
+      "_id": "6999876262c41fb82397a84a",
+      "name": "Mountain Dew",
+      "description": "250 ml",
+      "price": 450,
+      "image": "1771669890183mountain.png",
+      "category": "Italok",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1950,
+  "address": {
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "tkiss6@gmail.com",
+    "orderDate": "2026-03-05",
+    "breakTime": "2",
+    "phone": "20756473920"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "",
+  "date": {
+    "$date": "2026-03-05T08:51:14.243Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "7982",
+  "createdAt": {
+    "$date": "2026-03-05T08:51:14.261Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T07:02:29.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c3216984b03e617a7c8998"
+  },
+  "userId": "guest_1774395752776",
+  "items": [
+    {
+      "_id": "69207790cf8f8ff6ba9d8e54",
+      "name": "Hamburger",
+      "description": "finom burger",
+      "price": 1000,
+      "image": "1771668208230hamburger.png",
+      "category": "Hamburger",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 2,
+      "exclusions": [
+        "Hagyma"
+      ],
+      "additions": []
+    }
+  ],
+  "amount": 2000,
+  "address": {
+    "firstName": "Hevesi",
+    "lastName": "Tamás",
+    "email": "hevesitamas7@gmail.com",
+    "orderDate": "2026-03-24",
+    "breakTime": "5",
+    "phone": "06203687750"
+  },
+  "status": "Feldolgozás alatt",
+  "note": "",
+  "date": {
+    "$date": "2026-03-24T23:42:33.158Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "3546",
+  "createdAt": {
+    "$date": "2026-03-24T23:42:33.165Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T23:42:33.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c4f12f19680bce6352dad1"
+  },
+  "userId": "69c4f10219680bce6352da8c",
+  "items": [
+    {
+      "_id": "699983e462c41fb82397a821",
+      "name": "Girosz",
+      "description": "finom  girosz",
+      "price": 1000,
+      "image": "1771668452377menu_2.png",
+      "category": "Gyros",
+      "available": true,
+      "rating": 5,
+      "__v": 0,
+      "quantity": 1,
+      "exclusions": [],
+      "additions": []
+    }
+  ],
+  "amount": 1000,
+  "address": {
+    "firstName": "Drinkál",
+    "lastName": "Hunor",
+    "email": "hunorupi@gmail.com",
+    "orderDate": "2026-03-26",
+    "breakTime": "3",
+    "phone": "+36306460754"
+  },
+  "status": "Átvéve",
+  "note": "",
+  "date": {
+    "$date": "2026-03-26T08:41:19.383Z"
+  },
+  "payment": true,
+  "paymentMethod": "Stripe",
+  "randomCode": "7641",
+  "createdAt": {
+    "$date": "2026-03-26T08:41:19.385Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T08:45:44.849Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c4f1d419680bce6352dcbf"
+  },
+  "userId": "guest_1774514644358",
+  "items": [
+    {
+      "_id": "69208af3cf8f8ff6ba9d8e7e",
+      "name": "Pizza",
+      "description": "pizza",
+      "price": 500,
+      "image": "1771668311057pizza.jpg",
+      "category": "Pizza",
+      "__v": 0,
+      "available": true,
+      "rating": 5,
+      "quantity": 67,
+      "exclusions": [],
+      "additions": [
+        "Tartár",
+        "Ketchup"
+      ]
+    }
+  ],
+  "amount": 33500,
+  "address": {
+    "firstName": "Orbán ",
+    "lastName": "Ferenc ",
+    "email": "orbanferenc67@gmail.com",
+    "orderDate": "2026-03-26",
+    "breakTime": "6",
+    "phone": "063011111111"
+  },
+  "status": "Felvettük rendelésed",
+  "note": "Figyelj csak ez nagyon drága ",
+  "date": {
+    "$date": "2026-03-26T08:44:04.339Z"
+  },
+  "payment": false,
+  "paymentMethod": "Utánvét",
+  "randomCode": "6430",
+  "createdAt": {
+    "$date": "2026-03-26T08:44:04.340Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T08:47:11.025Z"
+  },
+  "__v": 0
+}]

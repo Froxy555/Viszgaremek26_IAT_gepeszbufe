@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "69208af3cf8f8ff6ba9d8e7e"
+  },
+  "name": "Pizza",
+  "description": "pizza",
+  "price": 500,
+  "image": "1771668311057pizza.jpg",
+  "category": "Pizza",
+  "__v": 0,
+  "available": true,
+  "rating": 5
+},
+{
+  "_id": {
+    "$oid": "69207790cf8f8ff6ba9d8e54"
+  },
+  "name": "Hamburger",
+  "description": "finom burger",
+  "price": 1000,
+  "image": "1771668208230hamburger.png",
+  "category": "Hamburger",
+  "__v": 0,
+  "available": true,
+  "rating": 5
+},
+{
+  "_id": {
+    "$oid": "698e0140b7162993ef3871bc"
+  },
+  "name": "Piritós",
+  "description": "finom francia",
+  "price": 500,
+  "image": "1771669284894piritos.png",
+  "category": "Piritos",
+  "available": true,
+  "__v": 0,
+  "rating": 5
+},
+{
+  "_id": {
+    "$oid": "699983e462c41fb82397a821"
+  },
+  "name": "Girosz",
+  "description": "finom  girosz",
+  "price": 1000,
+  "image": "1771668452377menu_2.png",
+  "category": "Gyros",
+  "available": true,
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699986a762c41fb82397a839"
+  },
+  "name": "Coca cola",
+  "description": "250 ml",
+  "price": 450,
+  "image": "1771669159071coca.png",
+  "category": "Italok",
+  "available": true,
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699986eb62c41fb82397a83e"
+  },
+  "name": "Xixo",
+  "description": "250 ml",
+  "price": 450,
+  "image": "1771669227830xixo.png",
+  "category": "Italok",
+  "available": true,
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6999876262c41fb82397a84a"
+  },
+  "name": "Mountain Dew",
+  "description": "250 ml",
+  "price": 450,
+  "image": "1771669890183mountain.png",
+  "category": "Italok",
+  "available": true,
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "699989a862c41fb82397a87a"
+  },
+  "name": "Pepsi",
+  "description": "250 ml",
+  "price": 450,
+  "image": "1771669928002pepsi.png",
+  "category": "Italok",
+  "available": true,
+  "rating": 5,
+  "__v": 0
+}]
