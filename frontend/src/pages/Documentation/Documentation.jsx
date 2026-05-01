@@ -100,7 +100,7 @@ const documents = [
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="doc-icon"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line><polyline points="8 10 12 6 16 10"></polyline><line x1="12" y1="6" x2="12" y2="14"></line></svg>
     ),
-    link: 'https://docs.google.com/presentation/d/1atpm38w6wTZDRNVUtnLJLHH9FXhewsCH/edit?usp=sharing&ouid=108620491123130329208&rtpof=true&sd=true',
+    link: 'https://docs.google.com/presentation/d/1ohDJbR_WMixzFAW_tQhGxm3Y2_1vBiqK/edit?usp=sharing&ouid=108620491123130329208&rtpof=true&sd=true',
     type: 'presentation'
   }
 ];
